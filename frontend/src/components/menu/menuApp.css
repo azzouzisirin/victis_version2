@@ -1,0 +1,42 @@
+
+
+.menu_second, .drop-menu_second {
+list-style-type: none;
+}
+
+.menu_second-item {
+    float: right;
+position: relative;
+}
+
+.menu_second-item a {
+text-decoration: none;
+width:75px ;
+color: #fff;
+font-size: 19px;
+    line-height: 1.4;
+
+display: block;
+}
+
+.drop-menu_second {
+display: none;
+background-color: #0a0a0a;
+height: 700px;
+}
+
+.drop-menu_second-item {
+width: 700px;
+}
+
+.drop-menu_second-item:hover {
+background-color: #db2222;
+}
+
+.drop-menu_second-item a {
+color: #555;
+}
+
+.menu_second-item:hover .drop-menu_second {
+display: block;
+}

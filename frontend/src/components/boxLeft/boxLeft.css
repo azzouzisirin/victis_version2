@@ -1,0 +1,73 @@
+.Boxleft{
+  box-shadow:7px 7px 8px rgba(0,0,0,0.5);
+  border-width:0px;
+  border-color:transparent;
+  background-color:#FAFAFA;
+    width:300px;
+  margin:30px;
+ 
+  padding-top: 10px; 
+    padding-bottom: 10px;
+ 
+  }
+
+  .Boxleft h2{
+    margin-left: 10px;
+    font-family: arimo, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+  }
+
+  .Boxleft h3{
+    font-size: 19px;
+    line-height: 23px;
+    padding-right: 4px;
+    padding-left: 12px;
+    padding-top: 3px;
+    font-family: advent-pro, sans-serif;
+    font-weight: 400;
+
+  }
+  .boxleft img{
+    margin-top: 5%;
+    width: 230px;
+    height: 120px;
+  }
+  .boxleft a{
+    text-decoration : none;
+  }
+
+  .confianceshow {
+    overflow: hidden;
+    margin: auto;
+    width: 200px;
+    height: 150px;
+
+  } 
+  
+  .confiantehowSlider {
+    white-space: nowrap;
+   width: 200px;
+    height: 150px;
+    transition: ease 1000ms;
+  }
+  
+  .confiance {
+    display: inline-block;
+    height: 110px;
+  
+    width: 100%;
+  }
+.aButton{
+  margin: 10px;
+  background-color:#000295  ;
+}
+@media screen and (max-width: 960px) {
+.boxleft{
+  width:300px;
+  margin:20px ; 
+
+}
+
+}
