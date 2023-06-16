@@ -41,6 +41,8 @@ export default function Popup(props) {
     const [numOrdre, setnumOrdre] = useState();
     const [TextProg, setTextProg] = useState();
     const [updList, setupdList] = useState(0);
+    const [updProg, setupdProg] = useState(0);
+
     const [indexpersos, setindexpersos] = useState('');
 
     const [listText_1, setlistText_1] = useState([]);
@@ -63,7 +65,7 @@ export default function Popup(props) {
     const [listProg, setListProg] = React.useState([]);
     const addhandlerListProg = e => {
       e.preventDefault();
-      if(updList==0){
+      if(updProg==0){
       const newList = listTextProg.concat({ TextProg });
       setlistTextProg(newList);
     setNew_data({ ...new_data, titre: TextProg })
@@ -72,7 +74,7 @@ export default function Popup(props) {
       setNew_data({ titre: "", list: [] });
       setListProg ([])         
       }
-      if(updList==1){
+      if(updProg==1){
         const newState = persos.map((obj,index) => {
           if (index === indexpersos) {
             return {...obj, titre: new_data.titre,list:listProg };
@@ -81,7 +83,7 @@ export default function Popup(props) {
           return obj;
         });
        setPersos(newState)
-       setupdList(0)
+       setupdProg(0)
        setListProg([])
        setName('')
        setNew_data({ ...new_data, titre: '' })
@@ -101,7 +103,7 @@ export default function Popup(props) {
       setindexpersos(index)
       setNew_data({ ...new_data, titre: persos[index].titre})  
       setListProg( persos[index].list)  
-
+      setupdProg(1)
     }
     function handleChange(event) {
       setName(event.target.value);
@@ -126,7 +128,7 @@ export default function Popup(props) {
        
       setListProg(newState); 
       setName('')
-
+      setupdList(0)
       }
     
        
@@ -585,7 +587,7 @@ export default function Popup(props) {
              ))}
              </td>
              <td> <button  onClick={() => deleteItem(p.titre)}>   <Delete /></button>
-             <button  onClick={() => updateItem(p.titre,index)}>   <Update /></button>
+             <button  onClick={() => updateItem(p.titre,index)}>  qq <Update /></button>
              </td>
                  </tr>
           ))}
@@ -601,13 +603,13 @@ export default function Popup(props) {
               /> </td>
                <td>   <input type="text" style={{width:"80%"}} value={name} onChange={handleChange} />
            <button type="button" onClick={handleAdd}>
-             <Check/>
+             <Check/> cc
            </button>
            <ul>
            {listProg!= ""?listProg.map((item,index) => (
             <div style={{display:"flex"}}> 
             <p style={{flex:"70%"}}>{item.name}</p>
-            <button style={{flex:"20%"}}  onClick={() => {setName(item.name);setupdList(1);setindexup(index)}}><Update /> </button>
+            <button style={{flex:"20%"}}  onClick={() => {setName(item.name);setupdList(1);setindexup(index)}}><Update /> ss </button>
             <button style={{flex:"20%"}}  onClick={() => {deleteItemPetitList(item.name)}}><Delete /> </button>
 
             </div>

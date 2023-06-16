@@ -60,6 +60,7 @@ const [numOrdre,setnumOrdre]=useState();
     const [name, setName] = React.useState('');
     const [TextProg, setTextProg] = useState();
     const [indxModl2, setindxModl2] = useState(0);
+    const [UpdliProg, setUpdliProg] = useState(0);
 
     const [new_data, setNew_data] = useState({
       titre: "",
@@ -98,7 +99,6 @@ const [numOrdre,setnumOrdre]=useState();
         
         }
         if(updprog==1){
-          alert("c")
 
           const newState = programme.map((obj,index) => {
             if (index === indexprogramme) {
@@ -167,7 +167,6 @@ const [numOrdre,setnumOrdre]=useState();
       };
       const updateGrandbloc =async (e) => {
         e.preventDefault();
-     alert(indxGrandProg)
         const newState = GrandProg.map((obj,index) => {
           if (index === indxGrandProg) {
             return {...obj, grandtitre: new_dataTout.grandtitre, prog:programme };
@@ -176,9 +175,10 @@ const [numOrdre,setnumOrdre]=useState();
           return obj;
         });
        
-      setListProg(newState); 
+      setGrandProg(newState); 
       setName('') 
-
+      setprogramme([])
+      setNew_dataTout({ ...new_dataTout, grandtitre: "" })
       };
       useEffect(() => {
   
@@ -314,7 +314,7 @@ const [numOrdre,setnumOrdre]=useState();
           setindexpersos(index)
           setNew_data({ ...new_data, titre: persos[index].titre})  
           setListProg( persos[index].list)  
-    
+          setUpdliProg(1)
         }
  
         function handleAdd() {
@@ -335,6 +335,8 @@ const [numOrdre,setnumOrdre]=useState();
            
           setListProg(newState); 
           setName('')
+          setupdList(0)
+
           }
          }
          const deleteItemPetitList =  (name) => {
@@ -354,7 +356,7 @@ const [numOrdre,setnumOrdre]=useState();
         }
          const addhandlerListProg = e => {
           e.preventDefault();
-          if(updList==0){
+          if(UpdliProg==0){
           const newList = listTextProg.concat({ TextProg });
           setlistTextProg(newList);
         setNew_data({ ...new_data, titre: TextProg })
@@ -363,7 +365,7 @@ const [numOrdre,setnumOrdre]=useState();
           setNew_data({ titre: "", list: [] });
           setListProg ([])         
         }
-        if(updList==1){
+        if(UpdliProg==1){
           const newState = persos.map((obj,index) => {
             if (index === indexpersos) {
               return {...obj, titre: new_data.titre,list:listProg };
@@ -372,7 +374,6 @@ const [numOrdre,setnumOrdre]=useState();
             return obj;
           });
          setPersos(newState)
-         setupdList(0)
          setListProg([])
          setName('')
          setNew_data({ ...new_data, titre: '' })
@@ -455,7 +456,7 @@ const [numOrdre,setnumOrdre]=useState();
                          value={Text_1}
               onChange={e => setText_1( e.target.value )}
             /> </td>
-            <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
+            <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> oo</button>
  </td>
 
     </tr>
@@ -487,7 +488,7 @@ const [numOrdre,setnumOrdre]=useState();
              ))}
              </td>
              <td> <button  onClick={() => deleteItem(p.titre)}>   <Delete /></button>
-             <button  onClick={() => updateItem(p.titre,index)}>   <Update /></button>
+             <button  onClick={() => updateItem(p.titre,index)}>  uuu <Update /></button>
 
              </td>
                  </tr>
@@ -504,13 +505,13 @@ const [numOrdre,setnumOrdre]=useState();
               /> </td>
                <td>   <input type="text" style={{width:"80%"}} value={name} onChange={handleChange} />
            <button type="button" onClick={handleAdd}>
-             <Check/>
+             <Check/> ppp
            </button>
            <ul>
            {listProg!= ""?listProg.map((item,index) => (
   <div style={{display:"flex"}}> 
   <p style={{flex:"70%"}}>{item.name}</p>
-  <button style={{flex:"20%"}}  onClick={() => {setName(item.name);setupdList(1);setindexup(index)}}><Update /> </button>
+  <button style={{flex:"20%"}}  onClick={() => {setName(item.name);setupdList(1);setindexup(index)}}> yyy <Update /> </button>
   <button style={{flex:"20%"}}  onClick={() => {deleteItemPetitList(item.name)}}><Delete /> </button>
 
   </div>           )):null}
@@ -518,7 +519,7 @@ const [numOrdre,setnumOrdre]=useState();
            
            
             </td>
-              <td>      <button onClick={addhandlerListProg} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
+              <td>      <button onClick={addhandlerListProg} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> vv</button>
    </td>
   
       </tr>
@@ -548,7 +549,7 @@ const [numOrdre,setnumOrdre]=useState();
               <td>{p.Text_1}</td>
              
               <td> 
-              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/></button>
+              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}>ttt <Update/></button>
 
                 <button  onClick={() => deleteItemText_1(p.Text_1)}>   <Delete /></button></td>
             </tr>
@@ -582,7 +583,7 @@ const [numOrdre,setnumOrdre]=useState();
             />
             <button onClick={addhandlerBloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}>Ajouter</button>
             <button onClick={deleteGrandbloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}><Delete/>  </button>
-            <button onClick={updateGrandbloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}> <Update/>  </button>
+            <button onClick={updateGrandbloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}>  rrr <Update/>  </button>
 
           </div>
             <div className="tableDiv tabledecore" style={{ marginTop: "20px",marginLeft:"50px" }}>
@@ -614,7 +615,7 @@ const [numOrdre,setnumOrdre]=useState();
                          </div> 
                         ))}
                       </td>
-                      <td> <button style={{flex:"20%"}}  onClick={() => {setNew_dataModel2({ ...new_dataModel2, titre: programme[index_1].titre });setlistProgModel2(programme[index_1].list);setindexprogramme(index_1);setupdprog(1)}}><Update />aa </button>
+                      <td> <button style={{flex:"20%"}}  onClick={() => {setNew_dataModel2({ ...new_dataModel2, titre: programme[index_1].titre });setlistProgModel2(programme[index_1].list);setindexprogramme(index_1);setupdprog(1)}}> ee<Update />aa </button>
                       <button style={{flex:"20%"}}  onClick={() => {deletListprog(p.titre)}}><Delete /> </button>
 
                       </td>
@@ -676,7 +677,7 @@ const [numOrdre,setnumOrdre]=useState();
                     <div key={index}>
                     <div style={{display:'flex'}}>
                       <h1 style={{fontSize:'29px',flex:'60%',textDecoration:"underline"}}>{s.grandtitre}</h1>
-                      <button style={{flex:"20%"}}  onClick={() =>{setNew_dataTout({ ...new_dataTout, grandtitre: s.grandtitre });setprogramme(s.prog);setmotGrandProg(s.grandtitre);setindxGrandProg(index)}} ><Update /> bb </button>
+                      <button style={{flex:"20%"}}  onClick={() =>{setNew_dataTout({ ...new_dataTout, grandtitre: s.grandtitre });setprogramme(s.prog);setmotGrandProg(s.grandtitre);setindxGrandProg(index)}} >aa <Update /> bb </button>
 
                       </div>
                       {s.prog.map((m, index) => (

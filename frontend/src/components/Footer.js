@@ -5,7 +5,7 @@ export default function Footer() {
  
 
     
-return ( 
+return (  
 		
 
 	<div class="footer bg-grey-5 text-light py-6">
