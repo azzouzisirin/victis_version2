@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Dialog,  makeStyles } from '@material-ui/core';
-import { Delete , Update,Check} from '@material-ui/icons'
+import { Delete , Update,Check, ArtTrack} from '@material-ui/icons'
 import axios from "axios";
 
 import {BASE_URL} from "../helper"
@@ -24,6 +24,12 @@ export default function ModelModule(props) {
     const [TitreModule, setTitreModule] = useState();
     const[ indText_1,setindText_1]= useState();
     const [programme, setprogramme] = useState([]);
+    const [indexpersos, setindexpersos] = useState('');
+    const [updList, setupdList] = useState(0);
+    const [indexup, setindexup] = useState();
+    const [indexupModel2, setindexupModel2] = useState();
+    const [indexprogramme, setindexprogramme] = useState();
+    const [updprog, setupdprog] = useState(0);
 
     const [listProgModel2, setlistProgModel2] = useState([]);
     const [TextProgModel2, setTextProgModel2] = useState();
@@ -38,7 +44,9 @@ export default function ModelModule(props) {
       list: []
     });
     const [nameModel2, setNameModel2] = useState("");
-  
+    const [indxGrandProg, setindxGrandProg] = useState("");
+    const [motGrandProg, setmotGrandProg] = useState("");
+
 const [numOrdre,setnumOrdre]=useState();
     const [listText_1, setlistText_1] = useState([]);
     const [nomModule, setnomModule] = useState();
@@ -51,6 +59,8 @@ const [numOrdre,setnumOrdre]=useState();
     const [listProg, setListProg] = React.useState([]);
     const [name, setName] = React.useState('');
     const [TextProg, setTextProg] = useState();
+    const [indxModl2, setindxModl2] = useState(0);
+
     const [new_data, setNew_data] = useState({
       titre: "",
       list: []
@@ -76,8 +86,8 @@ const [numOrdre,setnumOrdre]=useState();
          fetchData();
       }, []);
       const addhandlerlistProgModel2 = (e) => {
-        e.preventDefault();
-    
+        e.preventDefault(); 
+        if(updprog==0){
         setNew_dataModel2({ ...new_dataModel2, titre: TextProgModel2 });
         setNew_dataModel2({ ...new_dataModel2, list: listProgModel2 });
         setprogramme([...programme, new_dataModel2]);
@@ -85,6 +95,24 @@ const [numOrdre,setnumOrdre]=useState();
         setNew_dataModel2({ titre: "", list: [] });
         setlistProgModel2([]);
         setTextProgModel2("");
+        
+        }
+        if(updprog==1){
+          alert("c")
+
+          const newState = programme.map((obj,index) => {
+            if (index === indexprogramme) {
+              return {...obj, titre: new_dataModel2.titre,list:listProgModel2 };
+            }
+      
+            return obj;
+          });
+         setprogramme(newState)
+         setupdprog(0)
+          setlistProgModel2([])
+          setNameModel2('')
+          setNew_dataModel2({ ...new_dataModel2, titre: "" })
+        }
       };
       useEffect(() => {
         setNew_dataTout({ ...new_dataTout, prog: programme });
@@ -95,10 +123,28 @@ const [numOrdre,setnumOrdre]=useState();
       };
     
       const handleAddModel2 = () => {
-        const newList = listProgModel2.concat({ nameModel2 });
-        setNameModel2("");
-        setNew_dataModel2({ ...new_dataModel2, list: newList });
-        setlistProgModel2(newList);
+        if(indxModl2==0){ 
+          const newList = listProgModel2.concat({ nameModel2 });
+          setNameModel2("");
+          setNew_dataModel2({ ...new_dataModel2, list: newList });
+          setlistProgModel2(newList);
+        }
+        if(indxModl2==1){
+
+          const newState = listProgModel2.map((obj,index) => {
+
+            if (index === indexupModel2) {
+              return {...obj, nameModel2: nameModel2 };
+            }
+      
+            return obj;
+          });
+         
+        setlistProgModel2(newState); 
+        setNameModel2('')
+        setindxModl2(0)
+
+        }
       };
     
     
@@ -110,6 +156,28 @@ const [numOrdre,setnumOrdre]=useState();
         setprogramme([]);
         setNew_dataModel2({ titre: "", list: [] });
         setNew_dataTout({ titre: "", list: [] });
+
+      };
+      const deleteGrandbloc =async (e) => {
+        e.preventDefault();
+        const newList = GrandProg.filter((item) => item.grandtitre !== motGrandProg);
+ 
+        setGrandProg(newList);    
+
+      };
+      const updateGrandbloc =async (e) => {
+        e.preventDefault();
+     alert(indxGrandProg)
+        const newState = GrandProg.map((obj,index) => {
+          if (index === indxGrandProg) {
+            return {...obj, grandtitre: new_dataTout.grandtitre, prog:programme };
+          }
+    
+          return obj;
+        });
+       
+      setListProg(newState); 
+      setName('') 
 
       };
       useEffect(() => {
@@ -242,18 +310,51 @@ const [numOrdre,setnumOrdre]=useState();
         function handleChange(event) {
           setName(event.target.value);
         }
-
+        const updateItem =  (titre,index) => {
+          setindexpersos(index)
+          setNew_data({ ...new_data, titre: persos[index].titre})  
+          setListProg( persos[index].list)  
+    
+        }
  
         function handleAdd() {
+          if(updList==0){
           const newList = listProg.concat({ name });
        setName('')
        setNew_data({ ...new_data, list: newList })
            setListProg(newList);
+          }
+          if(updList==1){
+            const newState = listProg.map((obj,index) => {
+              if (index === indexup) {
+                return {...obj, name: name };
+              }
+        
+              return obj;
+            });
            
+          setListProg(newState); 
+          setName('')
+          }
          }
+         const deleteItemPetitList =  (name) => {
+          const newList = listProg.filter((item) => item.name !== name);
+   
+          setListProg(newList);    
+        }
+        const deleteItemPetitListModel2 =  (nameModel2) => {
+          const newList = listProgModel2.filter((item) => item.nameModel2 !== nameModel2);
+   
+          setlistProgModel2(newList);    
+        }
+        const deletListprog =  (titre) => {
+          const newList = programme.filter((item) => item.titre !== titre);
+   
+          setprogramme(newList);    
+        }
          const addhandlerListProg = e => {
           e.preventDefault();
-       
+          if(updList==0){
           const newList = listTextProg.concat({ TextProg });
           setlistTextProg(newList);
         setNew_data({ ...new_data, titre: TextProg })
@@ -261,7 +362,23 @@ const [numOrdre,setnumOrdre]=useState();
           setPersos([...persos, new_data]);
           setNew_data({ titre: "", list: [] });
           setListProg ([])         
+        }
+        if(updList==1){
+          const newState = persos.map((obj,index) => {
+            if (index === indexpersos) {
+              return {...obj, titre: new_data.titre,list:listProg };
+            }
       
+            return obj;
+          });
+         setPersos(newState)
+         setupdList(0)
+         setListProg([])
+         setName('')
+         setNew_data({ ...new_data, titre: '' })
+  
+  
+        }
       
         };
       
@@ -324,7 +441,7 @@ const [numOrdre,setnumOrdre]=useState();
               <td>{p.Text_1}</td>
              
               <td> 
-              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/></button>
+              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}>  <Update/></button>
 
                 <button  onClick={() => deleteItemText_1(p.Text_1)}>   <Delete /></button></td>
             </tr>
@@ -360,7 +477,7 @@ const [numOrdre,setnumOrdre]=useState();
             </tr> 
           </thead>
           <tbody>
-          {persos.map((p)  => (
+          {persos.map((p,index)  => (
             <tr >
               <td>{p.titre}</td>
               
@@ -369,7 +486,10 @@ const [numOrdre,setnumOrdre]=useState();
              <li style={{paddingLeft:'1px'}}> {l.name}</li>
              ))}
              </td>
-             <td> <button  onClick={() => deleteItem(p.titre)}>   <Delete /></button></td>
+             <td> <button  onClick={() => deleteItem(p.titre)}>   <Delete /></button>
+             <button  onClick={() => updateItem(p.titre,index)}>   <Update /></button>
+
+             </td>
                  </tr>
           ))}
         </tbody>
@@ -387,9 +507,13 @@ const [numOrdre,setnumOrdre]=useState();
              <Check/>
            </button>
            <ul>
-           {listProg!= ""?listProg.map((item) => (
-             <li key={item.id}>{item.name}</li>
-           )):null}
+           {listProg!= ""?listProg.map((item,index) => (
+  <div style={{display:"flex"}}> 
+  <p style={{flex:"70%"}}>{item.name}</p>
+  <button style={{flex:"20%"}}  onClick={() => {setName(item.name);setupdList(1);setindexup(index)}}><Update /> </button>
+  <button style={{flex:"20%"}}  onClick={() => {deleteItemPetitList(item.name)}}><Delete /> </button>
+
+  </div>           )):null}
          </ul>
            
            
@@ -457,6 +581,9 @@ const [numOrdre,setnumOrdre]=useState();
               }
             />
             <button onClick={addhandlerBloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}>Ajouter</button>
+            <button onClick={deleteGrandbloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}><Delete/>  </button>
+            <button onClick={updateGrandbloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}> <Update/>  </button>
+
           </div>
             <div className="tableDiv tabledecore" style={{ marginTop: "20px",marginLeft:"50px" }}>
               <table>
@@ -473,15 +600,23 @@ const [numOrdre,setnumOrdre]=useState();
                   </tr>
                 </thead>
                 <tbody>
-                  {programme.map((p) => (
-                    <tr key={p.titre}>
+                  {programme.map((p,index_1) => (
+                    <tr >
                       <td>{p.titre}</td>
                       <td>
-                        {p.list.map((l, index) => (
-                          <li key={index} style={{ paddingLeft: "1px" }}>
+                        {p.list.map((l) => (
+                            <div style={{display:'flex'}}>
+                           <p style={{flex:'60%'}}>
                             {l.nameModel2}
-                          </li>
+                          </p> 
+
+
+                         </div> 
                         ))}
+                      </td>
+                      <td> <button style={{flex:"20%"}}  onClick={() => {setNew_dataModel2({ ...new_dataModel2, titre: programme[index_1].titre });setlistProgModel2(programme[index_1].list);setindexprogramme(index_1);setupdprog(1)}}><Update />aa </button>
+                      <button style={{flex:"20%"}}  onClick={() => {deletListprog(p.titre)}}><Delete /> </button>
+
                       </td>
                     </tr>
                   ))}
@@ -505,11 +640,17 @@ const [numOrdre,setnumOrdre]=useState();
                         onChange={handleChangeModel2}
                       />
                       <button type="button" onClick={handleAddModel2}>
-                        <Check />
+                        <Check /> mm
                       </button>
                       <ul>
-                        {listProgModel2.map((item, index) => (
-                          <li key={index}>{item.nameModel2}</li>
+                        {listProgModel2.map((item, index) => ( 
+                          <div style={{display:'flex'}}>
+                          <p style={{flex:"70%"}} >{item.nameModel2}</p>
+                      <button style={{flex:"20%"}}  onClick={() =>{setNameModel2(item.nameModel2);setindxModl2(1);setindexupModel2(index)}}><Update />zzzz </button>
+                      <button style={{flex:"20%"}}  onClick={() => {deleteItemPetitListModel2(item.nameModel2)}}><Delete /> </button>
+
+                         </div>
+
                         ))}
                       </ul>
                     </td>
@@ -519,7 +660,7 @@ const [numOrdre,setnumOrdre]=useState();
                         style={{ margin: "20px", background: "#D0E3FA", border: "none" }}
                       >
                         
-                        <Check />
+                        <Check />xxx
                       </button>
                     </td>
                   </tr>
@@ -533,7 +674,11 @@ const [numOrdre,setnumOrdre]=useState();
                 <div>
                   {GrandProg.map((s, index) => (
                     <div key={index}>
-                      <h1 style={{fontSize:'29px',textDecoration:"underline"}}>{s.grandtitre}</h1>
+                    <div style={{display:'flex'}}>
+                      <h1 style={{fontSize:'29px',flex:'60%',textDecoration:"underline"}}>{s.grandtitre}</h1>
+                      <button style={{flex:"20%"}}  onClick={() =>{setNew_dataTout({ ...new_dataTout, grandtitre: s.grandtitre });setprogramme(s.prog);setmotGrandProg(s.grandtitre);setindxGrandProg(index)}} ><Update /> bb </button>
+
+                      </div>
                       {s.prog.map((m, index) => (
                         <div key={index}>
                           <h3 style={{fontSize:'24px',margin:"6px"}}>{m.titre}</h3>

@@ -31,6 +31,7 @@ export default function Popup(props) {
     const [Text_2, setText_2] = useState();
     const [TextList, setTextList] = useState();
  
+    const [indexup, setindexup] = useState();
 
     const [picLoading, setprofilePictureLoading] = useState(false);
     const [profilePicture, setprofilePicture] = useState();
@@ -39,6 +40,8 @@ export default function Popup(props) {
     const[ indText_2,setindText_2]= useState();
     const [numOrdre, setnumOrdre] = useState();
     const [TextProg, setTextProg] = useState();
+    const [updList, setupdList] = useState(0);
+    const [indexpersos, setindexpersos] = useState('');
 
     const [listText_1, setlistText_1] = useState([]);
     const [listText_2, setlistText_2] = useState([]);
@@ -55,10 +58,12 @@ export default function Popup(props) {
   
     }); 
     const [name, setName] = React.useState('');
+    const [recentname, setrecentName] = React.useState('');
+
     const [listProg, setListProg] = React.useState([]);
     const addhandlerListProg = e => {
       e.preventDefault();
-   
+      if(updList==0){
       const newList = listTextProg.concat({ TextProg });
       setlistTextProg(newList);
     setNew_data({ ...new_data, titre: TextProg })
@@ -66,7 +71,23 @@ export default function Popup(props) {
       setPersos([...persos, new_data]);
       setNew_data({ titre: "", list: [] });
       setListProg ([])         
-  
+      }
+      if(updList==1){
+        const newState = persos.map((obj,index) => {
+          if (index === indexpersos) {
+            return {...obj, titre: new_data.titre,list:listProg };
+          }
+    
+          return obj;
+        });
+       setPersos(newState)
+       setupdList(0)
+       setListProg([])
+       setName('')
+       setNew_data({ ...new_data, titre: '' })
+
+
+      }
   
     };
     const [prix, setprix] = useState();
@@ -76,14 +97,38 @@ export default function Popup(props) {
   
       setPersos(newList);    
     }
+    const updateItem =  (titre,index) => {
+      setindexpersos(index)
+      setNew_data({ ...new_data, titre: persos[index].titre})  
+      setListProg( persos[index].list)  
+
+    }
     function handleChange(event) {
       setName(event.target.value);
+      setrecentName(event.target.value);
+
     }
     function handleAdd() {
-      const newList = listProg.concat({ name });
-   setName('')
-   setNew_data({ ...new_data, list: newList })
-       setListProg(newList);
+      if(updList==0){
+        const newList = listProg.concat({ name });
+        setName('')
+        setNew_data({ ...new_data, list: newList })
+            setListProg(newList);
+      }
+      if(updList==1){
+        const newState = listProg.map((obj,index) => {
+          if (index === indexup) {
+            return {...obj, name: name };
+          }
+    
+          return obj;
+        });
+       
+      setListProg(newState); 
+      setName('')
+
+      }
+    
        
      }
       const postDetails = (pics) => {
@@ -130,13 +175,16 @@ export default function Popup(props) {
       useEffect(() => {
         const fetchData = async () => { 
           const res = await axios.get(`${BASE_URL}/formation/getFormationById/`+idforma);
-          setnomFormation(res.data.nom);
+          setnomFormation(res.data.Formation.nom);
           setcategorie(res.data.Formation.categorie)
-          settypeModule(res.data.typeModelFormation)
-
+          settypeModule(res.data.Formation.typeModelFormation) 
+          setnumOrdre(res.data.Formation.numOrdre)
+          setPersos(res.data.Formation.programme)
           setlistText_1(res.data.Formation.text_1)
           setlistDes(res.data.Formation.list)
           setlistText_2(res.data.Formation.text_2)
+          setprix(res.data.Formation.prix)
+          setduree(res.data.Formation.duree)
 
         };
          fetchData();
@@ -160,7 +208,6 @@ export default function Popup(props) {
        
            setlistText_1(newState);
            setupdtouNonText_1(0)
-
            setText_1('')
           
        }
@@ -209,10 +256,11 @@ export default function Popup(props) {
 
 
        }
-       const deleteItemList =  (TextList) => {
-        const newList = listText_1.filter((item) => item.TextList !== TextList);
  
-        setlistDes(newList);    
+      const deleteItemPetitList =  (name) => {
+        const newList = listProg.filter((item) => item.name !== name);
+ 
+        setListProg(newList);    
       }
       const addhandlerText_2 = e => {
         e.preventDefault();
@@ -334,6 +382,7 @@ export default function Popup(props) {
           <label style={{fontWeight:'600',fontSize:"20px"}}>  Catégorie</label>
           <select  style={{width:"150px",height:"45px",marginLeft:"20px"}} 
               onChange={e => setcategorie( e.target.value )} defaultValue={categorie}>
+            <option value="">choisi</option>
 
             {listCategorie.map((option) => ( 
               <option value={option.nom}>{option.nom}</option>
@@ -351,7 +400,7 @@ export default function Popup(props) {
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Nom de formation </label>
           <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnomFormation(e.target.value)} } value={nomFormation}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Numero d'ordre </label>
-          <input style={{width:"80px" , borderWidth: "1px",borderStyle: "solid",borderColor : "black",height:"30px"}} type="number" placeholder='Ordre de categorie' onChange={e => {setnumOrdre(e.target.value)} } value={numOrdre}/> 
+          <input style={{width:"80px" , borderWidth: "1px",borderStyle: "solid",borderColor : "black",height:"30px"}} type="number" placeholder='Ordre de categorie' onChange={e => {setnumOrdre(e.target.value)} } value={numOrdre}/><br/> <br/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Image </label>
           <input type="file" accept="image/*" onChange={(e) => postDetails(e.target.files[0])}/>
           {typeModule=="0"? <></>:null}
@@ -411,7 +460,7 @@ export default function Popup(props) {
               <td> 
               <button onClick={() => updateItemList({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/></button>
 
-                <button  onClick={() => deleteItemList(p.TextList)}>   <Delete /></button></td>
+                </td>
             </tr>
           ))}
         </tbody>
@@ -526,7 +575,7 @@ export default function Popup(props) {
             </tr> 
           </thead>
           <tbody>
-          {persos.map((p)  => (
+          {persos.map((p,index)  => (
             <tr >
               <td>{p.titre}</td>
               
@@ -535,7 +584,9 @@ export default function Popup(props) {
              <li style={{paddingLeft:'1px'}}> {l.name}</li>
              ))}
              </td>
-             <td> <button  onClick={() => deleteItem(p.titre)}>   <Delete /></button></td>
+             <td> <button  onClick={() => deleteItem(p.titre)}>   <Delete /></button>
+             <button  onClick={() => updateItem(p.titre,index)}>   <Update /></button>
+             </td>
                  </tr>
           ))}
         </tbody>
@@ -553,14 +604,19 @@ export default function Popup(props) {
              <Check/>
            </button>
            <ul>
-           {listProg!= ""?listProg.map((item) => (
-             <li key={item.id}>{item.name}</li>
+           {listProg!= ""?listProg.map((item,index) => (
+            <div style={{display:"flex"}}> 
+            <p style={{flex:"70%"}}>{item.name}</p>
+            <button style={{flex:"20%"}}  onClick={() => {setName(item.name);setupdList(1);setindexup(index)}}><Update /> </button>
+            <button style={{flex:"20%"}}  onClick={() => {deleteItemPetitList(item.name)}}><Delete /> </button>
+
+            </div>
            )):null}
          </ul>
            
            
             </td>
-              <td>      <button onClick={addhandlerListProg} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
+              <td>      <button onClick={addhandlerListProg} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> </button>
    </td>
   
       </tr>
@@ -570,7 +626,7 @@ export default function Popup(props) {
         </div>
       
       </>:null}
-    
+    <br/>
       <button style={{width:"90px",height:"30px",background:"DodgerBlue",color:"white",marginLeft:"15px"}}onClick={e => addFormation(e)}> enregistrer</button>
 
       </div>
