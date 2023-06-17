@@ -27,8 +27,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 								Formations
 								</button>
 								<button style={{flex:"1",paddingLeft:"195px"}} onClick={() =>setmenuAffiche(1)}>
-								<svg class="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+								<svg className="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+							<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
 						</svg>
 								</button>
 							</div>
@@ -37,8 +37,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 								Prestations de service
 								</button>
 								<button style={{flex:"1",paddingLeft:"150px"}} onClick={() =>setmenuAffiche(2)} >
-								<svg class="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+								<svg className="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+							<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
 						</svg>
 								</button>
 							</div>
@@ -47,8 +47,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 								Recrutement
 								</button>
 								<button style={{flex:"1",paddingLeft:"195px"}} onClick={() =>setmenuAffiche(3)} >
-								<svg class="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+								<svg className="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+							<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
 						</svg>
 								</button>
 							</div>
@@ -57,8 +57,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 								Actualités
 								</button>
 								<button style={{flex:"1",paddingLeft:"205px"}} onClick={() =>setmenuAffiche(4)}>
-								<svg class="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+								<svg className="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+							<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
 						</svg>
 								</button>
 							</div>
@@ -67,8 +67,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 								À propos
 								</button>
 								<button style={{flex:"1",paddingLeft:"212px"}} onClick={() =>setmenuAffiche(5)}>
-								<svg class="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+								<svg className="pointer-events-none  h-full w-9 transform -rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+							<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
 						</svg>
 								</button>
 							</div>
@@ -80,8 +80,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 	<div className=" flex h-20 bg-grey-5 sticky top-0 z-10" >
 
 		<div style={{color:'white',fontSize:'18px',margin:"30px",fontWeight:"bold",width:"500px"}}>
-	<button onClick={() =>setmenuAffiche(0)}> <svg class="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
-										<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="square"></path>
+	<button onClick={() =>setmenuAffiche(0)}> <svg className="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
+										<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="square"></path>
 									</svg> 
 									<p style={{marginLeft:"50px",marginTop:"-38px"}}>Formations</p></button>	</div>
 
@@ -132,9 +132,9 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 								</a>
 														<a className="menu-link  flex items-center px-6 h-15 hover:text-blue-2 group" href="/hardware/technology" target="">
 								Voir tout
-								<svg className="ml-2 h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 25">
-									<path d="M2 12.5h20" stroke="#00B6FF" stroke-width="2" stroke-miterlimit="10"/>
-									<path d="M15 5.5l7 7-7 7" stroke="#00B6FF" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+								<svg className="ml-2 h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+									<path d="M2 12.5h20" stroke="#00B6FF" strokeWidth="2" strokeMiterlimit="10"/>
+									<path d="M15 5.5l7 7-7 7" stroke="#00B6FF" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
 								</svg>
 							</a>
 						</nav>:null}
@@ -183,9 +183,9 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 								</a>
 														<a className="menu-link  flex items-center px-6 h-15 hover:text-blue-2 group" href="/hardware/industry" target="">
 								Voir tout
-								<svg className="ml-2 h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 25">
-									<path d="M2 12.5h20" stroke="#00B6FF" stroke-width="2" stroke-miterlimit="10"/>
-									<path d="M15 5.5l7 7-7 7" stroke="#00B6FF" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+								<svg className="ml-2 h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+									<path d="M2 12.5h20" stroke="#00B6FF" strokeWidth="2" strokeMiterlimit="10"/>
+									<path d="M15 5.5l7 7-7 7" stroke="#00B6FF" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
 								</svg>
 							</a>
 						</nav>:null}
@@ -213,8 +213,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 	<div className=" flex h-20 bg-grey-5 sticky top-0 z-10" >
 
 		<div style={{color:'white',fontSize:'18px',margin:"30px",fontWeight:"bold",width:"500px"}}>
-	<button onClick={() =>setmenuAffiche(0)}> <svg class="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
-										<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="square"></path>
+	<button onClick={() =>setmenuAffiche(0)}> <svg className="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
+										<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="square"></path>
 									</svg> 
 									<p style={{marginLeft:"50px",marginTop:"-38px"}}>Prestations de service</p></button>	</div>
 
@@ -342,8 +342,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 	<div className=" flex h-20 bg-grey-5 sticky top-0 z-10" >
 
 <div style={{color:'white',fontSize:'18px',margin:"30px",fontWeight:"bold",width:"500px"}}>
-<button onClick={() =>setmenuAffiche(0)}> <svg class="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
-								<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="square"></path>
+<button onClick={() =>setmenuAffiche(0)}> <svg className="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
+								<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="square"></path>
 							</svg> 
 							<p style={{marginLeft:"50px",marginTop:"-38px"}}>Recrutement</p></button>	</div>
 
@@ -388,9 +388,9 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 								</a>
 														<a className="menu-link  flex items-center px-6 h-15 hover:text-blue-2 group" href="/hardware/technology" target="">
 								Voir tout
-								<svg className="ml-2 h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 25">
-									<path d="M2 12.5h20" stroke="#00B6FF" stroke-width="2" stroke-miterlimit="10"/>
-									<path d="M15 5.5l7 7-7 7" stroke="#00B6FF" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+								<svg className="ml-2 h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+									<path d="M2 12.5h20" stroke="#00B6FF" strokeWidth="2" strokeMiterlimit="10"/>
+									<path d="M15 5.5l7 7-7 7" stroke="#00B6FF" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
 								</svg>
 							</a>
 						</nav>
@@ -405,8 +405,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
  <div className=" flex h-20 bg-grey-5 sticky top-0 z-10" >
 
 <div style={{color:'white',fontSize:'18px',margin:"30px",fontWeight:"bold",width:"500px"}}>
-<button onClick={() =>setmenuAffiche(0)}> <svg class="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
-								<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="square"></path>
+<button onClick={() =>setmenuAffiche(0)}> <svg className="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
+								<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="square"></path>
 							</svg> 
 							<p style={{marginLeft:"50px",marginTop:"-38px"}}>Actualités
 
@@ -513,8 +513,8 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 	<div className=" flex h-20 bg-grey-5 sticky top-0 z-10" >
 
 <div style={{color:'white',fontSize:'18px',margin:"30px",fontWeight:"bold",width:"500px"}}>
-<button onClick={() =>setmenuAffiche(0)}> <svg class="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
-								<path class="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="square"></path>
+<button onClick={() =>setmenuAffiche(0)}> <svg className="pointer-events-none h-12 w-auto transform rotate-90 text-blue-2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" >
+								<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="square"></path>
 							</svg> 
 							<p style={{marginLeft:"50px",marginTop:"-38px"}}>À propos</p></button>	</div>
 
@@ -552,10 +552,10 @@ const handleClickFormation = () => setclickFormation(!clickFormation);
 </div>:null}
 
 
-<div class="px-4 py-8 bg-grey-5 sticky bottom-0 z-10">
-			<a class="button-primary text-button16 tracking-08 " style={{width:'80%',margin:"auto"}} href="/contactUs" target="_self">Contact Us</a>
+<div className="px-4 py-8 bg-grey-5 sticky bottom-0 z-10">
+			<a className="button-primary text-button16 tracking-08 " style={{width:'80%',margin:"auto"}} href="/contactUs" target="_self">Contact Us</a>
 			<br/><br/>
-			<a class="button-outline  text-button16 tracking-08 "style={{width:'80%',margin:"auto"}}  href="/soutien" target="_self">Get Support</a>
+			<a className="button-outline  text-button16 tracking-08 "style={{width:'80%',margin:"auto"}}  href="/soutien" target="_self">Get Support</a>
 		</div>
 
 </nav>

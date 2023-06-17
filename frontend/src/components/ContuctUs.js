@@ -20,9 +20,9 @@ export default function ContuctUs  ({images}) {
 					Chat en direct
 					<p className="hidden w-full flex-auto lg:block text-p18 text-grey-4 font-normal mt-2">Besoin de réponses précises et rapides tout de suite ? Connectez-vous avec l'un de nos assistants de chat en direct.</p>
 										<span className="button-link inline-flex items-center font-semibold text-blue-4 hidden lg:inline-flex lg:text-link18 mt-auto pt-4  drift-open-chat">Connectez-vous avec le chat
-	<svg className="ml-2 h-6 w-6  stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20" stroke-width="2" stroke-miterlimit="10"/>
-		<path className="stroke-current" d="M15 5.5l7 7-7 7" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+	<svg className="ml-2 h-6 w-6  stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"/>
+		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
 	</svg>
 </span>
 				</a>
@@ -31,9 +31,9 @@ export default function ContuctUs  ({images}) {
 					Email
 					<p className="hidden w-full flex-auto lg:block text-p18 text-grey-4 font-normal mt-2">Avez-vous une requête plus complexe ? Envoyez-nous un e-mail.</p>
 										<span className="button-link inline-flex items-center font-semibold text-blue-4 hidden lg:inline-flex lg:text-link18 mt-auto pt-4 ">Contactez-nous
-	<svg className="ml-2 h-6 w-6  stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20" stroke-width="2" stroke-miterlimit="10"/>
-		<path className="stroke-current" d="M15 5.5l7 7-7 7" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+	<svg className="ml-2 h-6 w-6  stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"/>
+		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
 	</svg>
 </span>
 				</a>
@@ -42,9 +42,9 @@ export default function ContuctUs  ({images}) {
 					Téléphone
 					<p className="hidden w-full flex-auto lg:block text-p18 text-grey-4 font-normal mt-2">Vous voulez en parler ? Parlez avec l'un des membres de notre équipe.</p>
 										<span className="button-link inline-flex items-center font-semibold text-blue-4 hidden lg:inline-flex lg:text-link18 mt-auto pt-4 ">+33 (0)9 63 22 47 40 
-	<svg className="ml-2 h-6 w-6  stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20" stroke-width="2" stroke-miterlimit="10"/>
-		<path className="stroke-current" d="M15 5.5l7 7-7 7" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+	<svg className="ml-2 h-6 w-6  stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"/>
+		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
 	</svg>
 </span>
 				</a>

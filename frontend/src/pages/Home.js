@@ -3,7 +3,7 @@ import React, { useState,useEffect } from "react";
 import NavBar from '../components/Navbar';
 import ContuctUs from '../components/ContuctUs';
 import Comp_Article from '../components/Comp_Article';
-import axios from "axios";
+import axios from "axios";  
 import {BASE_URL} from "../helper" 
 import Footer from '../components/Footer';
 import "slick-carousel/slick/slick.css";
@@ -52,9 +52,9 @@ export default function Home() {
 		<h4 className="text-h2Sm font-semibold">Formations {categorie}</h4>
 	<p className="mt-2 text-p18">{textCategorie}</p> 
 	<a href={"/ListFormation/"+categorie} className="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 mt-4 text-link18" target="">Voir tout
-	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20" stroke-width="2" stroke-miterlimit="10"/>
-		<path className="stroke-current" d="M15 5.5l7 7-7 7" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"/>
+		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
 	</svg>
 </a>
 													</div>
@@ -117,14 +117,7 @@ export default function Home() {
 			</section>
 		)
 	  }
-	useEffect(() => {
-   
-		const fetchData = async () => {
-		  const res = await axios.get(`${BASE_URL}/formation/AggreCategorie`);
-		  setdataCategorie(res.data);
-		};
-		 fetchData();
-	  }, []);
+
 	  useEffect(() => {
    
 		const fetchData = async () => {
@@ -153,7 +146,7 @@ export default function Home() {
 	const renderSlides = () =>(
 		
 		srcImg.map((num) => (
-      <img src={num.src} alt={num.src}/>
+      <img src={num.src} alt={num.src} key={num}/>
     ))
 	)
 
@@ -176,7 +169,7 @@ return (
 	<div className="hero__wrapper md:h-852p relative -md:pb-8 overflow-hidden">
 		<div className="hero__asset absolute w-full h-481p md:h-full z-10 overflow-hidden inset-0">
 	<div className="">
-		<img decoding="async" className="lozad w-full h-full object-cover md:hidden" srcset="./img/VICTIS-ServiceListing-Hero-1.jpeg 1825w, ./img/VICTIS-ServiceListing-Hero-1-300x178.jpeg 300w, ./img/VICTIS-ServiceListing-Hero-1-1024x606.jpeg 1024w, ./img/VICTIS-ServiceListing-Hero-1-768x454.jpeg 768w, ./img/VICTIS-ServiceListing-Hero-1-1536x909.jpeg 1536w, ./img/VICTIS-ServiceListing-Hero-1-2048x1212.jpeg 2048w, ./img/VICTIS-ServiceListing-Hero-1-600x355.jpeg 600w" src="./img/VICTIS-ServiceListing-Hero-1.jpeg" alt="VICTIS Services"/></div>
+		<img decoding="async" className="lozad w-full h-full object-cover md:hidden" srcSet="./img/VICTIS-ServiceListing-Hero-1.jpeg 1825w, ./img/VICTIS-ServiceListing-Hero-1-300x178.jpeg 300w, ./img/VICTIS-ServiceListing-Hero-1-1024x606.jpeg 1024w, ./img/VICTIS-ServiceListing-Hero-1-768x454.jpeg 768w, ./img/VICTIS-ServiceListing-Hero-1-1536x909.jpeg 1536w, ./img/VICTIS-ServiceListing-Hero-1-2048x1212.jpeg 2048w, ./img/VICTIS-ServiceListing-Hero-1-600x355.jpeg 600w" src="./img/VICTIS-ServiceListing-Hero-1.jpeg" alt="VICTIS Services"/></div>
 
                 <video className="hidden md:block object-cover h-full w-full" src="./img/VICTIS-Hero_video_compressed.mp4" autoPlay muted loop></video>		
 					</div>
@@ -223,24 +216,24 @@ return (
 
 
 
-<section class="featurette featurette--left  bg-dark text-light group">
-	<div class="lg:h-706p flex flex-col lg:flex-row">
-					<figure class="w-full lg:w-56pct overflow-hidden">
-				<img decoding="async" class="lozad w-full h-full object-cover max-h-500p lg:max-h-none transition-transform transform duration-750 group-hover:scale-105 ease-in-out" src="./img/artec-3d-scanners.jpg" alt="Artec 3D Scanners"/>
+<section className="featurette featurette--left  bg-dark text-light group">
+	<div className="lg:h-706p flex flex-col lg:flex-row">
+					<figure className="w-full lg:w-56pct overflow-hidden">
+				<img decoding="async" className="lozad w-full h-full object-cover max-h-500p lg:max-h-none transition-transform transform duration-750 group-hover:scale-105 ease-in-out" src="./img/artec-3d-scanners.jpg" alt="Artec 3D Scanners"/>
 			</figure>
-				<div class="featurette__body flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 grid:px-100p pt-10 pb-14">
+				<div className="featurette__body flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 grid:px-100p pt-10 pb-14">
 				<br/><br/>
-			<hr class="w-10 h-0 border-t-2 border-blue-2"/>
+			<hr className="w-10 h-0 border-t-2 border-blue-2"/>
 			
-			<p class="mt-6 text-o14 tracking-07 md:text-o18 md:tracking-09 font-semibold uppercase text-grey-2">Notre Top Vente</p>
-			<h3 class="mt-2 text-h3Sm md:text-h1Sm font-semibold">Formations pour l'ingénierie mecanique</h3>
-							<p class="mt-3 md:mt-4 text-p16 md:text-p18 text-grey-2">Les organisations à vocation technique et d'ingénierie ont autant besoin d'excellents ingénieurs que d'excellents gestionnaires et opérateurs. Les techniques d'ingénierie continuent d'évoluer à un rythme important, il est donc impératif que les ingénieurs en exercice doivent être en mesure de mettre à jour continuellement leurs compétences pour maintenir leur organisation à la pointe des meilleures pratiques. </p>
+			<p className="mt-6 text-o14 tracking-07 md:text-o18 md:tracking-09 font-semibold uppercase text-grey-2">Notre Top Vente</p>
+			<h3 className="mt-2 text-h3Sm md:text-h1Sm font-semibold">Formations pour l'ingénierie mecanique</h3>
+							<p className="mt-3 md:mt-4 text-p16 md:text-p18 text-grey-2">Les organisations à vocation technique et d'ingénierie ont autant besoin d'excellents ingénieurs que d'excellents gestionnaires et opérateurs. Les techniques d'ingénierie continuent d'évoluer à un rythme important, il est donc impératif que les ingénieurs en exercice doivent être en mesure de mettre à jour continuellement leurs compétences pour maintenir leur organisation à la pointe des meilleures pratiques. </p>
 
 										
-																				<a href="/PromoVictis" class="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 mt-6 md:mt-8 text-link16 md:text-link21" target="">Apprendre encore plus
-	<svg class="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
-		<path class="stroke-current" d="M2 12.5h20" stroke-width="2" stroke-miterlimit="10"></path>
-		<path class="stroke-current" d="M15 5.5l7 7-7 7" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+																				<a href="/PromoVictis" className="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 mt-6 md:mt-8 text-link16 md:text-link21" target="">Apprendre encore plus
+	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+		<path className="stroke-current" d="M2 12.5h20"  strokeWidth="2" strokeMiterlimit="10"></path>
+		<path className="stroke-current"  d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
 	</svg>
 </a>
 									</div>
@@ -627,9 +620,9 @@ return (
 			<h3 className="mt-2 text-h3Sm md:text-h1Sm font-semibold">Services d'ingénierie et de conception à la demande</h3>
 							<p className="mt-3 md:mt-4 text-p16 md:text-p18 text-grey-2">De la conception et de l'analyse aux services de conseil d'experts, VICTIS offre un support de leadership en ingénierie à la demande et sur site.</p>
 																							<a href="" className="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 mt-6 md:mt-8 text-link16 md:text-link21" target="">Apprendre encore plus
-	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20" stroke-width="2" stroke-miterlimit="10"/>
-		<path className="stroke-current" d="M15 5.5l7 7-7 7" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"/>
+		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
 	</svg>
 </a>
 									</div>
@@ -648,9 +641,9 @@ return (
 			<h3 className="mt-2 text-h3Sm md:text-h1Sm font-semibold">Apprenez des meilleurs professionnels de l'industrie en ligne ou en personne</h3>
 							<p className="mt-3 md:mt-4 text-p16 md:text-p18 text-grey-2">VICTIS propose une formation numérique en ligne et en personne dirigée par notre équipe d'ingénieurs hautement qualifiés pour tous les niveaux d'utilisateurs.</p>
 																							<a href="" className="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 mt-6 md:mt-8 text-link16 md:text-link21" target="">Apprendre encore plus
-	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20" stroke-width="2" stroke-miterlimit="10"/>
-		<path className="stroke-current" d="M15 5.5l7 7-7 7" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"/>
+		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>
 	</svg>
 </a>
 									</div>

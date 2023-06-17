@@ -39,37 +39,37 @@ export default function MenuApp  () {
 			<img className=" hidden lg:block" width="95px" height="30px" style={{marginTop:"-40px"}} src="../../img/logo_VICTIS.png" alt="logo"/>
 			
 		</a>
-		<nav class="header-menu list-none h-full" >
-        <div class="menu_second-wrap">
-        <ul class="menu-item menu-item-L0 pl-2 grid:pl-8 menu-item-has-items inline-block h-full menu_second">
-        <li class="menu_second-item">
+		<nav className="header-menu list-none h-full" >
+        <div className="menu_second-wrap">
+        <ul className="menu-item menu-item-L0 pl-2 grid:pl-8 menu-item-has-items inline-block h-full menu_second">
+        <li className="menu_second-item">
      
                 <a href="#">Pages
               
                 </a>
                 
-                <ul class="drop-menu_second">
-                    <li class="drop-menu_second-item">
+                <ul className="drop-menu_second">
+                    <li className="drop-menu_second-item">
                         <a href="#">Page 1</a>
                     </li>
-                    <li class="drop-menu_second-item">
+                    <li className="drop-menu_second-item">
                         <a href="#">Page 2</a>
                     </li>
-                    <li class="drop-menu_second-item">
+                    <li className="drop-menu_second-item">
                         <a href="#">Page 3</a>
                     </li>
                 </ul>
             </li>
-            <li class="menu_second-item">
+            <li className="menu_second-item">
               <a href="#">aaa</a>
-              <ul class="drop-menu_second">
-                  <li class="drop-menu_second-item">
+              <ul className="drop-menu_second">
+                  <li className="drop-menu_second-item">
                       <a href="#">eded 1</a>
                   </li>
-                  <li class="drop-menu_second-item">
+                  <li className="drop-menu_second-item">
                       <a href="#">ddd 2</a>
                   </li>
-                  <li class="drop-menu_second-item">
+                  <li className="drop-menu_second-item">
                       <a href="#">Page 3</a>
                   </li>
               </ul>

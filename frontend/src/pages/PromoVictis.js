@@ -10,32 +10,32 @@ export default function PromoVictis() {
 return(
     <> 
 	<NavBar/>
-<div class="post-template-default single single-post postid-52073 single-format-standard wp-embed-responsive theme-pyxl-scry woocommerce-js" data-template="base.twig">
+<div className="post-template-default single single-post postid-52073 single-format-standard wp-embed-responsive theme-pyxl-scry woocommerce-js" data-template="base.twig">
 
 
 
-            <h1 class="screen-reader-text" href="#content">
+            <h1 className="screen-reader-text" href="#content">
         
     </h1>
 
 <main role="main">
-    <div class="content-wrapper">
+    <div className="content-wrapper">
 
 
-<article class="post-single post-type-post max-w-5xl px-5 mx-auto" id="post-52073">
-    <header class="pt-1 text-center">
-        <div class="font-semibold uppercase text-grey-2 text-o18">
+<article className="post-single post-type-post max-w-5xl px-5 mx-auto" id="post-52073">
+    <header className="pt-1 text-center">
+        <div className="font-semibold uppercase text-grey-2 text-o18">
                                 </div>				
-        <h1 class="py-6 article-h1 accent-b"><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>Promotion de reprise du scanner Artec 3D</font></font></h1>
-        <p class="font-semibold uppercase blog-author blog-date mt-7 tracking-07 text-grey-3 text-o18">
+        <h1 className="py-6 article-h1 accent-b"><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>Promotion de reprise du scanner Artec 3D</font></font></h1>
+        <p className="font-semibold uppercase blog-author blog-date mt-7 tracking-07 text-grey-3 text-o18">
             <span><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>Par VICTIS le</font></font></span>
             <time datetime="2023-03-29 00:00:00"><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>29 mars 2023</font></font></time>
         </p>
     </header>
-    <img class="mt-7" height="472" src="./img/artec-leo-man-in-office-save-for-web-1-984x472-c-default.png"/>
-    <section class="mt-12 article-content">
+    <img className="mt-7" height="472" src="./img/artec-leo-man-in-office-save-for-web-1-984x472-c-default.png"/>
+    <section className="mt-12 article-content">
 
-        <div class="article-body">
+        <div className="article-body">
             <p><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>Est-il temps de mettre à niveau votre technologie de numérisation 3D ? </font><font  style={{verticalAlign: "inherit"}}>Vous cherchez à vous tenir au courant de la solution de numérisation de nouvelle génération ?</font></font></p>
 <h3><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>Obtenez 5 000 $ de réduction sur un nouvel Artec Leo lorsque vous échangez N'IMPORTE QUEL scanner 3D&nbsp;!&nbsp;</font></font></h3>
 <p><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>L'Artec Leo est le scanner 3D portable sans fil le plus mobile du marché. </font><font  style={{verticalAlign: "inherit"}}>Il offre une véritable liberté dans la numérisation 3D. </font><font  style={{verticalAlign: "inherit"}}>Premier scanner 3D à offrir un traitement automatique embarqué, l'Artec Leo est capable de fournir le flux de travail le plus intuitif, rendant la numérisation 3D aussi simple que la prise d'une vidéo. </font><font  style={{verticalAlign: "inherit"}}>Pendant que vous numérisez votre objet, voyez la réplique 3D en cours de construction en temps réel sur l'écran tactile de Leo. </font><font  style={{verticalAlign: "inherit"}}>Faites pivoter le modèle 3D, vérifiez si vous avez capturé toutes les zones et remplissez toutes les parties que vous avez peut-être manquées.</font></font></p>
@@ -47,7 +47,7 @@ return(
 <li><strong><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>Lentille de mappage de texture -&nbsp;</font></font></strong><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}> la texture la plus avancée du marché pour le mappage de la géométrie, avec des caméras 3D et couleur combinées et dirigées à travers le même objectif.&nbsp;</font></font></li>
 <li><strong><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>Mode HD -&nbsp;</font></font></strong><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}> avec le mode HD, vous bénéficierez d'une haute résolution à couper le souffle combinée à des numérisations nettes et d'une netteté éclatante.</font></font></li>
 </ul>
-<p><img decoding="async" loading="lazy" class="aligncenter size-large wp-image-40086" src="./img/Artec20Leo20Scanning20Monitor-1-1-1024x768.jpg" alt="" width="1024" height="768" srcset="./img/Artec20Leo20Scanning20Monitor-1-1-1024x768.jpg 1024w, ./img/Artec20Leo20Scanning20Monitor-1-1-300x225.jpg 300w, ./img/Artec20Leo20Scanning20Monitor-1-1-768x576.jpg 768w, ./img/Artec20Leo20Scanning20Monitor-1-1-1536x1152.jpg 1536w, ./img/Artec20Leo20Scanning20Monitor-1-1-2048x1536.jpg 2048w, ./img/Artec20Leo20Scanning20Monitor-1-1-600x450.jpg 600w" sizes="(max-width: 1024px) 100vw, 1024px"/></p>
+<p><img decoding="async" loading="lazy" className="aligncenter size-large wp-image-40086" src="./img/Artec20Leo20Scanning20Monitor-1-1-1024x768.jpg" alt="" width="1024" height="768" srcset="./img/Artec20Leo20Scanning20Monitor-1-1-1024x768.jpg 1024w, ./img/Artec20Leo20Scanning20Monitor-1-1-300x225.jpg 300w, ./img/Artec20Leo20Scanning20Monitor-1-1-768x576.jpg 768w, ./img/Artec20Leo20Scanning20Monitor-1-1-1536x1152.jpg 1536w, ./img/Artec20Leo20Scanning20Monitor-1-1-2048x1536.jpg 2048w, ./img/Artec20Leo20Scanning20Monitor-1-1-600x450.jpg 600w" sizes="(max-width: 1024px) 100vw, 1024px"/></p>
 <h3><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>Comment échanger pour 5 000 $ de rabais</font></font></h3>
 <p><font  style={{verticalAlign: "inherit"}}><font  style={{verticalAlign: "inherit"}}>Que vous possédiez déjà un appareil Artec 3D ou que vous possédiez un scanner 3D d'une autre marque, nous sommes prêts à vous aider à passer à l'étape suivante !&nbsp;</font></font></p>
 <ul>

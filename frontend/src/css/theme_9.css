@@ -3168,7 +3168,7 @@
     .line-clamp-3,
     .line-clamp-4 {
     box-orient: vertical;
-    display: box;
+    display: flex;
     overflow: hidden;
   }
   
@@ -3586,7 +3586,7 @@
     -webkit-appearance: none;
             appearance: none;
     -webkit-print-color-adjust: exact;
-            color-adjust: exact;
+    print-color-adjust: exact;
     background-repeat: no-repeat;
     background-color: #fff;
     border-color: #e2e8f0;
@@ -3653,7 +3653,7 @@
     -webkit-appearance: none;
             appearance: none;
     -webkit-print-color-adjust: exact;
-            color-adjust: exact;
+            print-color-adjust: exact;
     display: inline-block;
     vertical-align: middle;
     background-origin: border-box;
@@ -3703,7 +3703,7 @@
     -webkit-appearance: none;
             appearance: none;
     -webkit-print-color-adjust: exact;
-            color-adjust: exact;
+            print-color-adjust: exact;
     display: inline-block;
     vertical-align: middle;
     background-origin: border-box;
@@ -8812,7 +8812,7 @@
     
     .-lg\:line-clamp-2 {
       box-orient: vertical;
-      display: box;
+      display: flex;
       overflow: hidden;
     }
   
@@ -8958,7 +8958,7 @@
     
     .grid\:line-clamp-3 {
       box-orient: vertical;
-      display: box;
+      display: flex;
       overflow: hidden;
     }
   
@@ -9243,7 +9243,7 @@
     
     .-grid\:line-clamp-2 {
       box-orient: vertical;
-      display: box;
+      display: flex;
       overflow: hidden;
     }
   

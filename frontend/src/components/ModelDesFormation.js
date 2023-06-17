@@ -163,7 +163,7 @@ export default function ModelDesFormation(props) {
     return (
         <Dialog open={openPopupDetailForma} maxWidth="xl"  classes={{ paper: classes.dialogWrapper,overflow: 'auto' }}>
               <div style={{padding:"40px"}} >
-            <button onClick={() =>setopenPopupDetailForma(false)} class="w-12 h-12 flex absolute top-4 right-4 hover:border-2 hover:border-blue rounded-md active:bg-grey-1">
+            <button onClick={() =>setopenPopupDetailForma(false)} className="w-12 h-12 flex absolute top-4 right-4 hover:border-2 hover:border-blue rounded-md active:bg-grey-1">
            <p style={{margin:"auto",fontWeight:"600",fontSize:"22px"}}> X </p> 
          
             </button>
@@ -171,12 +171,12 @@ export default function ModelDesFormation(props) {
          <div > 
      
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Nom de Formation </label>
-          <input type="text" style={{width:"150px",height:"30px"}}  value={nomForma}/>
+          <p style={{width:"150px",height:"30px"}} >{nomForma} </p>
          
            <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Durée </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } value={duree}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } defaultValue={duree}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Prix </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } value={prix}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } defaultValue={prix}/>
           <div className='tableDiv tabledecore' style={{marginTop:"20px"}}> 
   <table  >
         <thead>
@@ -202,7 +202,7 @@ export default function ModelDesFormation(props) {
 
     <td>     <input
               type="text"
-                         value={Text_1}
+                         defaultValue={Text_1}
               onChange={e => setText_1( e.target.value )}
             /> </td>
             <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
@@ -245,11 +245,11 @@ export default function ModelDesFormation(props) {
   
       <td>     <input
                 type="text"
-                value={new_data.titre}
+                defaultValue={new_data.titre}
                            onChange={e => setNew_data({ ...new_data, titre: e.target.value })}
 
               /> </td>
-               <td>   <input type="text" style={{width:"80%"}} value={name} onChange={handleChange} />
+               <td>   <input type="text" style={{width:"80%"}} defaultValue={name} onChange={handleChange} />
            <button type="button" onClick={handleAdd}>
              <Check/>
            </button>

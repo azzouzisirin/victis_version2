@@ -17,25 +17,25 @@ export default function DescFormation  () {
 	  }, []);
     return(
 <>  
-<section id="#video" class="video bg-dark text-light text-center">
-	<div class="pt-8 pb-9 lg:pt-24 lg:pb-32 px-4 grid:px-0 max-w-grid mx-auto">
-		<h6 class="text-o14 tracking-07 md:text-o18 font-semibold uppercase"></h6>
-		<h3 class="mt-1 md:mt-2 text-h2Sm md:text-h3 font-semibold">Découvrez le logiciel de CAO 3D standard SOLIDWORKS</h3>
+<section id="#video" className="video bg-dark text-light text-center">
+	<div className="pt-8 pb-9 lg:pt-24 lg:pb-32 px-4 grid:px-0 max-w-grid mx-auto">
+		<h6 className="text-o14 tracking-07 md:text-o18 font-semibold uppercase"></h6>
+		<h3 className="mt-1 md:mt-2 text-h2Sm md:text-h3 font-semibold">Découvrez le logiciel de CAO 3D standard SOLIDWORKS</h3>
 		<br/>
-		<img class="wistia_embed" src='../../img/imageSolidwork.jpg' width="100%"/>
+		<img className="wistia_embed" src='../../img/imageSolidwork.jpg' width="100%"/>
 <script src="./SOLIDWORKS Standard 3D Modeling CAD Software, Buy Online Now_files/E-v1.js.téléchargement" async=""></script>
 
 	</div>
 </section>
 
-	<section class="related-products" >
-	<div class=" mx-auto " style={{width:"80%"}}>
-		<div class="px-4 grid:px-0 flex justify-between">
-			<h3 class="text-h2Sm md:text-h2" id="produit">Produits connexes</h3>
-							<a href="/categorie" class="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 hidden grid:flex text-link21 ease-400" style={{marginRight:"15%"}} target="_self">Voir tout 
-	<svg class="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
-		<path class="stroke-current" d="M2 12.5h20" stroke-width="2" stroke-miterlimit="10"></path>
-		<path class="stroke-current" d="M15 5.5l7 7-7 7" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+	<section className="related-products" >
+	<div className=" mx-auto " style={{width:"80%"}}>
+		<div className="px-4 grid:px-0 flex justify-between">
+			<h3 className="text-h2Sm md:text-h2" id="produit">Produits connexes</h3>
+							<a href="/categorie" className="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 hidden grid:flex text-link21 ease-400" style={{marginRight:"15%"}} target="_self">Voir tout 
+	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
+		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"></path>
+		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
 	</svg>
 </a>
 					</div> 
@@ -95,8 +95,8 @@ export default function DescFormation  () {
 						</div>
 				
 									</div>
-		<div class="px-4 mt-8 grid:hidden">
-			<a class="button-outline text-button16 tracking-16 w-full" href="/categorie" target="_self">Voir tout</a>
+		<div className="px-4 mt-8 grid:hidden">
+			<a className="button-outline text-button16 tracking-16 w-full" href="/categorie" target="_self">Voir tout</a>
 		</div>
 	</div>
 </section>

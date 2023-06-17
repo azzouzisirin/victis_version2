@@ -24,7 +24,7 @@ export default function Dashbord() {
 return(
     <>  
     <NavBar/>
-    <div class="page-template page-template-page-simple page-template-page-simple-php page page-id-9 wp-embed-responsive theme-pyxl-scry woocommerce-account woocommerce-page woocommerce-js" >
+    <div className="page-template page-template-page-simple page-template-page-simple-php page page-id-9 wp-embed-responsive theme-pyxl-scry woocommerce-account woocommerce-page woocommerce-js" >
 <div className="flex-container">
 <div style={{flex:"20%"}} className="menuLeft" >
     <ul> 

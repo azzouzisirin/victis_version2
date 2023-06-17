@@ -391,7 +391,7 @@ const [numOrdre,setnumOrdre]=useState();
     return (
         <Dialog open={openPopupModule} maxWidth="xl"  classes={{ paper: classes.dialogWrapper,overflow: 'auto' }}>
               <div style={{padding:"40px"}} >
-            <button onClick={() =>setopenPopupModule(false)} class="w-12 h-12 flex absolute top-4 right-4 hover:border-2 hover:border-blue rounded-md active:bg-grey-1">
+            <button onClick={() =>setopenPopupModule(false)} className="w-12 h-12 flex absolute top-4 right-4 hover:border-2 hover:border-blue rounded-md active:bg-grey-1">
            <p style={{margin:"auto",fontWeight:"600",fontSize:"22px"}}> X </p> 
          
             </button>
@@ -415,18 +415,18 @@ const [numOrdre,setnumOrdre]=useState();
       
             </select>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Nom de Module </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnomModule(e.target.value)} } value={nomModule}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnomModule(e.target.value)} } defaultValue={nomModule}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Titre de Module  </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setTitreModule(e.target.value)} } value={TitreModule}/> <br/><br/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setTitreModule(e.target.value)} } defaultValue={TitreModule}/> <br/><br/>
          
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Numero d'ordre </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnumOrdre(e.target.value)} } value={numOrdre}/> 
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnumOrdre(e.target.value)} } defaultValue={numOrdre}/> 
        {typeModule=="0"? <></>:null}
        {typeModule=="1"? <>
        <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Durée </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } value={duree}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } defaultValue={duree}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Prix </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } value={prix}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } defaultValue={prix}/>
       
           <div className='tableDiv tabledecore' style={{marginTop:"20px"}}> 
   <table  >
@@ -453,7 +453,7 @@ const [numOrdre,setnumOrdre]=useState();
 
     <td>     <input
               type="text"
-                         value={Text_1}
+                         defaultValue={Text_1}
               onChange={e => setText_1( e.target.value )}
             /> </td>
             <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> oo</button>
@@ -488,7 +488,7 @@ const [numOrdre,setnumOrdre]=useState();
              ))}
              </td>
              <td> <button  onClick={() => deleteItem(p.titre)}>   <Delete /></button>
-             <button  onClick={() => updateItem(p.titre,index)}>  uuu <Update /></button>
+             <button  onClick={() => updateItem(p.titre,index)}>   <Update /></button>
 
              </td>
                  </tr>
@@ -499,11 +499,11 @@ const [numOrdre,setnumOrdre]=useState();
   
       <td>     <input
                 type="text"
-                value={new_data.titre}
+                defaultValue={new_data.titre}
                            onChange={e => setNew_data({ ...new_data, titre: e.target.value })}
 
               /> </td>
-               <td>   <input type="text" style={{width:"80%"}} value={name} onChange={handleChange} />
+               <td>   <input type="text" style={{width:"80%"}} defaultValue={name} onChange={handleChange} />
            <button type="button" onClick={handleAdd}>
              <Check/> ppp
            </button>
@@ -511,7 +511,7 @@ const [numOrdre,setnumOrdre]=useState();
            {listProg!= ""?listProg.map((item,index) => (
   <div style={{display:"flex"}}> 
   <p style={{flex:"70%"}}>{item.name}</p>
-  <button style={{flex:"20%"}}  onClick={() => {setName(item.name);setupdList(1);setindexup(index)}}> yyy <Update /> </button>
+  <button style={{flex:"20%"}}  onClick={() => {setName(item.name);setupdList(1);setindexup(index)}}>  <Update /> </button>
   <button style={{flex:"20%"}}  onClick={() => {deleteItemPetitList(item.name)}}><Delete /> </button>
 
   </div>           )):null}
@@ -531,9 +531,9 @@ const [numOrdre,setnumOrdre]=useState();
        {typeModule=="2"?
         <>
         <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Durée </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } value={duree}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } defaultValue={duree}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Prix </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } value={prix}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } defaultValue={prix}/>
       
           <div className='tableDiv tabledecore' style={{marginTop:"20px"}}> 
   <table  >
@@ -549,7 +549,7 @@ const [numOrdre,setnumOrdre]=useState();
               <td>{p.Text_1}</td>
              
               <td> 
-              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}>ttt <Update/></button>
+              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}> <Update/></button>
 
                 <button  onClick={() => deleteItemText_1(p.Text_1)}>   <Delete /></button></td>
             </tr>
@@ -560,7 +560,7 @@ const [numOrdre,setnumOrdre]=useState();
 
     <td>     <input
               type="text"
-                         value={Text_1}
+                         defaultValue={Text_1}
               onChange={e => setText_1( e.target.value )}
             /> </td>
             <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
@@ -576,14 +576,14 @@ const [numOrdre,setnumOrdre]=useState();
               <h3 style={{marginRight:"50px",marginTop:"5px",fontSize:"20px"}}> Grand Titre </h3>
           <input
               type="text"
-              value={new_dataTout.grandtitre} style={{width:"250px",height:"20px",marginRight:"50px"}}
+              defaultValue={new_dataTout.grandtitre} style={{width:"250px",height:"20px",marginRight:"50px"}}
               onChange={(e) =>
                 setNew_dataTout({ ...new_dataTout, grandtitre: e.target.value })
               }
             />
             <button onClick={addhandlerBloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}>Ajouter</button>
             <button onClick={deleteGrandbloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}><Delete/>  </button>
-            <button onClick={updateGrandbloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}>  rrr <Update/>  </button>
+            <button onClick={updateGrandbloc} style={{background:"black",color:"white",width:"90px",height:"30px"}}>   <Update/>  </button>
 
           </div>
             <div className="tableDiv tabledecore" style={{ marginTop: "20px",marginLeft:"50px" }}>
@@ -615,7 +615,7 @@ const [numOrdre,setnumOrdre]=useState();
                          </div> 
                         ))}
                       </td>
-                      <td> <button style={{flex:"20%"}}  onClick={() => {setNew_dataModel2({ ...new_dataModel2, titre: programme[index_1].titre });setlistProgModel2(programme[index_1].list);setindexprogramme(index_1);setupdprog(1)}}> ee<Update />aa </button>
+                      <td> <button style={{flex:"20%"}}  onClick={() => {setNew_dataModel2({ ...new_dataModel2, titre: programme[index_1].titre });setlistProgModel2(programme[index_1].list);setindexprogramme(index_1);setupdprog(1)}}> <Update /> </button>
                       <button style={{flex:"20%"}}  onClick={() => {deletListprog(p.titre)}}><Delete /> </button>
 
                       </td>
@@ -627,7 +627,7 @@ const [numOrdre,setnumOrdre]=useState();
                     <td>
                       <input
                         type="text"
-                        value={new_dataModel2.titre}
+                        defaultValue={new_dataModel2.titre}
                         onChange={(e) =>
                           setNew_dataModel2({ ...new_dataModel2, titre: e.target.value })
                         }
@@ -637,7 +637,7 @@ const [numOrdre,setnumOrdre]=useState();
                       <input
                         type="text"
                         style={{ width: "80%" }}
-                        value={nameModel2}
+                        defaultValue={nameModel2}
                         onChange={handleChangeModel2}
                       />
                       <button type="button" onClick={handleAddModel2}>
@@ -647,7 +647,7 @@ const [numOrdre,setnumOrdre]=useState();
                         {listProgModel2.map((item, index) => ( 
                           <div style={{display:'flex'}}>
                           <p style={{flex:"70%"}} >{item.nameModel2}</p>
-                      <button style={{flex:"20%"}}  onClick={() =>{setNameModel2(item.nameModel2);setindxModl2(1);setindexupModel2(index)}}><Update />zzzz </button>
+                      <button style={{flex:"20%"}}  onClick={() =>{setNameModel2(item.nameModel2);setindxModl2(1);setindexupModel2(index)}}><Update /> </button>
                       <button style={{flex:"20%"}}  onClick={() => {deleteItemPetitListModel2(item.nameModel2)}}><Delete /> </button>
 
                          </div>
@@ -677,7 +677,7 @@ const [numOrdre,setnumOrdre]=useState();
                     <div key={index}>
                     <div style={{display:'flex'}}>
                       <h1 style={{fontSize:'29px',flex:'60%',textDecoration:"underline"}}>{s.grandtitre}</h1>
-                      <button style={{flex:"20%"}}  onClick={() =>{setNew_dataTout({ ...new_dataTout, grandtitre: s.grandtitre });setprogramme(s.prog);setmotGrandProg(s.grandtitre);setindxGrandProg(index)}} >aa <Update /> bb </button>
+                      <button style={{flex:"20%"}}  onClick={() =>{setNew_dataTout({ ...new_dataTout, grandtitre: s.grandtitre });setprogramme(s.prog);setmotGrandProg(s.grandtitre);setindxGrandProg(index)}} > <Update />  </button>
 
                       </div>
                       {s.prog.map((m, index) => (

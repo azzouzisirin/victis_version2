@@ -48,30 +48,30 @@ export default function Authentification() {
     return ( 
 		<> 
 		<NavBar/>
-<div class="page-template page-template-page-simple page-template-page-simple-php page page-id-9 wp-embed-responsive theme-pyxl-scry woocommerce-account woocommerce-page woocommerce-js" data-template="base.twig">
+<div className="page-template page-template-page-simple page-template-page-simple-php page page-id-9 wp-embed-responsive theme-pyxl-scry woocommerce-account woocommerce-page woocommerce-js" data-template="base.twig">
 
 		
 
-					<h1 class="screen-reader-text" href="#content">
+					<h1 className="screen-reader-text" href="#content">
 				
 			</h1>
 		
 		<main role="main">
-				<section class="page py-5 md:py-13 text-dark">
+				<section className="page py-5 md:py-13 text-dark">
 	
-		<div class="content-wrapper max-w-grid mx-auto ">
-			<article class="post-type-page" id="post-9">
-				<section class="article-content">
-										<div class="article-body">
+		<div className="content-wrapper max-w-grid mx-auto ">
+			<article className="post-type-page" id="post-9">
+				<section className="article-content">
+										<div className="article-body">
 			
 
-<div class="woocommerce"><div class="woocommerce-notices-wrapper"></div>
+<div className="woocommerce"><div className="woocommerce-notices-wrapper"></div>
 
 		<h2>Connexion</h2>
 
 		
     
-		<form class="woocommerce-form woocommerce-form-login login" onSubmit={(e) => handleSubmit(e)}>
+		<form className="woocommerce-form woocommerce-form-login login" onSubmit={(e) => handleSubmit(e)}>
      
 		<br/>
           <label htmlFor="email">Email</label>
@@ -80,6 +80,7 @@ export default function Authentification() {
             type="email"
             name="email"
             placeholder="Email"
+			defaultValue={email}
             onChange={e => {setemail(e.target.value)} }
           />
 
@@ -90,6 +91,7 @@ export default function Authentification() {
             type="text"
             placeholder="Password"
             name="password"
+			defaultValue={password}
             onChange={e => {setpassword(e.target.value)} }
           />
         <br/>		<br/><br/>

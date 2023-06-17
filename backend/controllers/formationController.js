@@ -33,7 +33,7 @@ exports.AggreCategorie = async (req, res) => {
     try {
         const allclients = await formation.aggregate( [
             { $group : { _id : "$categorie",numOrdre:"$numOrdre", Formation: { $push: {"nom":"$nom","photo":"$photo"} } }},
-       
+        
           ]).sort({ numOrdre: 1 })
 
         res.json(allclients);
@@ -44,6 +44,20 @@ exports.AggreCategorie = async (req, res) => {
         });
     }
 };
+exports.searchFormation = async (req,res)=>{
+    const keyword = req.query.search
+      ? {
+          $or: [
+            { nom: { $regex: req.query.search, $options: "i" } },
+            { categorie: { $regex: req.query.search, $options: "i" } },
+          ],
+        } 
+      : {};
+  
+    const pages = await formation.find(keyword);
+  
+    res.send(pages);
+  }
 exports.getFormationByCteg = async (req, res) => {
     try {
         const categ = await Categorie.findOne({nom:req.params.nomCateg});
