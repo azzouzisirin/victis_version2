@@ -174,9 +174,9 @@ export default function ModelDesFormation(props) {
           <p style={{width:"150px",height:"30px"}} >{nomForma} </p>
          
            <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Durée </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } defaultValue={duree}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } value={duree}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Prix </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } defaultValue={prix}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } value={prix}/>
           <div className='tableDiv tabledecore' style={{marginTop:"20px"}}> 
   <table  >
         <thead>
@@ -202,7 +202,7 @@ export default function ModelDesFormation(props) {
 
     <td>     <input
               type="text"
-                         defaultValue={Text_1}
+                         value={Text_1}
               onChange={e => setText_1( e.target.value )}
             /> </td>
             <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
@@ -245,11 +245,11 @@ export default function ModelDesFormation(props) {
   
       <td>     <input
                 type="text"
-                defaultValue={new_data.titre}
+                value={new_data.titre}
                            onChange={e => setNew_data({ ...new_data, titre: e.target.value })}
 
               /> </td>
-               <td>   <input type="text" style={{width:"80%"}} defaultValue={name} onChange={handleChange} />
+               <td>   <input type="text" style={{width:"80%"}} value={name} onChange={handleChange} />
            <button type="button" onClick={handleAdd}>
              <Check/>
            </button>

@@ -121,7 +121,7 @@ return (
 		<div role="search" className="max-w-8 transition-max-w duration-400 ease-in-out flex-1 my-1 mr-10p o:max-w-564p bg-grey-5 overflow-hidden">
 		  <div className="relative h-full"><button className="left-4 inset-y-0 m-auto text-light hover:text-blue fill-none absolute"><svg className="stroke-current h-5 w-5"><use href="#icon-search"></use></svg></button>
 		<div className="p-0 m-0 w-full h-full bg-clear">
-			<input  type="text" onChange={e => setcherche( e.target.value )} defaultValue={cherche}  id="search-input" className="custom-tw pl-12 pr-4 w-full h-full text-light bg-clear border-none ease-300"/>
+			<input  type="text" onChange={e => setcherche( e.target.value )} value={cherche}  id="search-input" className="custom-tw pl-12 pr-4 w-full h-full text-light bg-clear border-none ease-300"/>
 		</div>
 		</div> 
 		<div className="-lg:hidden search-modal-panel absolute inset-0 w-screen h-screen overflow-hidden mt-12 pb-12 z-50"><div className="w-full h-full bg-dark opacity-75 absolute inset-0 mt-12"></div>

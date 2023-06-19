@@ -80,7 +80,7 @@ export default function Authentification() {
             type="email"
             name="email"
             placeholder="Email"
-			defaultValue={email}
+			value={email}
             onChange={e => {setemail(e.target.value)} }
           />
 
@@ -91,7 +91,7 @@ export default function Authentification() {
             type="text"
             placeholder="Password"
             name="password"
-			defaultValue={password}
+			value={password}
             onChange={e => {setpassword(e.target.value)} }
           />
         <br/>		<br/><br/>

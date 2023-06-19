@@ -399,7 +399,7 @@ const [numOrdre,setnumOrdre]=useState();
          <div > 
           <label style={{fontWeight:'600',fontSize:"20px"}}>  Formation</label>
           <select  style={{width:"150px",height:"45px",marginLeft:"20px"}} 
-              onChange={e => setformation( e.target.value )} defaultValue={formation}>
+              onChange={e => setformation( e.target.value )} value={formation}>
 
             {listformation.map((option) => ( 
               <option value={option.nom}>{option.nom}</option>
@@ -408,25 +408,25 @@ const [numOrdre,setnumOrdre]=useState();
             <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Type Module </label>
 
             <select  style={{width:"150px",height:"45px",marginLeft:"20px"}} 
-              onChange={e => settypeModule( e.target.value )} defaultValue={typeModule}>
+              onChange={e => settypeModule( e.target.value )} value={typeModule}>
              <option value="0">Model vide</option>
               <option value="1" >Model 1</option>   
               <option value="2" >Model 2</option>         
       
             </select>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Nom de Module </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnomModule(e.target.value)} } defaultValue={nomModule}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnomModule(e.target.value)} } value={nomModule}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Titre de Module  </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setTitreModule(e.target.value)} } defaultValue={TitreModule}/> <br/><br/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setTitreModule(e.target.value)} } value={TitreModule}/> <br/><br/>
          
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Numero d'ordre </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnumOrdre(e.target.value)} } defaultValue={numOrdre}/> 
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnumOrdre(e.target.value)} } value={numOrdre}/> 
        {typeModule=="0"? <></>:null}
        {typeModule=="1"? <>
        <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Durée </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } defaultValue={duree}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } value={duree}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Prix </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } defaultValue={prix}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } value={prix}/>
       
           <div className='tableDiv tabledecore' style={{marginTop:"20px"}}> 
   <table  >
@@ -453,10 +453,10 @@ const [numOrdre,setnumOrdre]=useState();
 
     <td>     <input
               type="text"
-                         defaultValue={Text_1}
+                         value={Text_1}
               onChange={e => setText_1( e.target.value )}
             /> </td>
-            <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> oo</button>
+            <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> </button>
  </td>
 
     </tr>
@@ -499,13 +499,13 @@ const [numOrdre,setnumOrdre]=useState();
   
       <td>     <input
                 type="text"
-                defaultValue={new_data.titre}
+                value={new_data.titre}
                            onChange={e => setNew_data({ ...new_data, titre: e.target.value })}
 
               /> </td>
-               <td>   <input type="text" style={{width:"80%"}} defaultValue={name} onChange={handleChange} />
+               <td>   <input type="text" style={{width:"80%"}} value={name} onChange={handleChange} />
            <button type="button" onClick={handleAdd}>
-             <Check/> ppp
+             <Check/> 
            </button>
            <ul>
            {listProg!= ""?listProg.map((item,index) => (
@@ -519,7 +519,7 @@ const [numOrdre,setnumOrdre]=useState();
            
            
             </td>
-              <td>      <button onClick={addhandlerListProg} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> vv</button>
+              <td>      <button onClick={addhandlerListProg} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> </button>
    </td>
   
       </tr>
@@ -531,9 +531,9 @@ const [numOrdre,setnumOrdre]=useState();
        {typeModule=="2"?
         <>
         <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Durée </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } defaultValue={duree}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } value={duree}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Prix </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } defaultValue={prix}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } value={prix}/>
       
           <div className='tableDiv tabledecore' style={{marginTop:"20px"}}> 
   <table  >
@@ -560,7 +560,7 @@ const [numOrdre,setnumOrdre]=useState();
 
     <td>     <input
               type="text"
-                         defaultValue={Text_1}
+                         value={Text_1}
               onChange={e => setText_1( e.target.value )}
             /> </td>
             <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
@@ -576,7 +576,7 @@ const [numOrdre,setnumOrdre]=useState();
               <h3 style={{marginRight:"50px",marginTop:"5px",fontSize:"20px"}}> Grand Titre </h3>
           <input
               type="text"
-              defaultValue={new_dataTout.grandtitre} style={{width:"250px",height:"20px",marginRight:"50px"}}
+              value={new_dataTout.grandtitre} style={{width:"250px",height:"20px",marginRight:"50px"}}
               onChange={(e) =>
                 setNew_dataTout({ ...new_dataTout, grandtitre: e.target.value })
               }
@@ -627,7 +627,7 @@ const [numOrdre,setnumOrdre]=useState();
                     <td>
                       <input
                         type="text"
-                        defaultValue={new_dataModel2.titre}
+                        value={new_dataModel2.titre}
                         onChange={(e) =>
                           setNew_dataModel2({ ...new_dataModel2, titre: e.target.value })
                         }
@@ -637,11 +637,11 @@ const [numOrdre,setnumOrdre]=useState();
                       <input
                         type="text"
                         style={{ width: "80%" }}
-                        defaultValue={nameModel2}
+                        value={nameModel2}
                         onChange={handleChangeModel2}
                       />
                       <button type="button" onClick={handleAddModel2}>
-                        <Check /> mm
+                        <Check /> 
                       </button>
                       <ul>
                         {listProgModel2.map((item, index) => ( 
@@ -661,7 +661,7 @@ const [numOrdre,setnumOrdre]=useState();
                         style={{ margin: "20px", background: "#D0E3FA", border: "none" }}
                       >
                         
-                        <Check />xxx
+                        <Check />
                       </button>
                     </td>
                   </tr>

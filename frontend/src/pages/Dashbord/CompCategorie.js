@@ -133,22 +133,22 @@ return(
               <div style={{display:"flex" }}>
               <div style={{flex:'50%',paddingTop:"10px"}}>
               <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Ordre de Catégorie</label>
-            <input style={{width:"80px" , borderWidth: "1px",borderStyle: "solid",borderColor : "black",height:"30px",marginLeft:"10px"}} type="number" placeholder='Ordre de categorie' onChange={e => {setnumOrdre(e.target.value)} } defaultValue={numOrdre}/> <br/><br/>
+            <input style={{width:"80px" , borderWidth: "1px",borderStyle: "solid",borderColor : "black",height:"30px",marginLeft:"10px"}} type="number" placeholder='Ordre de categorie' onChange={e => {setnumOrdre(e.target.value)} } value={numOrdre}/> <br/><br/>
             <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Image de Catégorie</label>
 
-            <input style={{width:"300px", marginLeft:"10px"}} type="file" accept="image/*"  onChange={(e) => postDetails(e.target.files[0])} defaultValue={profilePicture} /> 
+            <input style={{width:"300px", marginLeft:"10px"}} type="file" accept="image/*"  onChange={(e) => postDetails(e.target.files[0])} value={profilePicture} /> 
 
               
              </div>
             <div style={{flex:'50%',paddingTop:"10px"}}>
             <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Nom de Catégorie</label>
 
-            <input style={{width:"180px" , borderWidth: "1px",marginLeft:"30px",borderStyle: "solid",borderColor : "black",height:"30px"}} type="text" placeholder='Nom de categorie' onChange={e => {setnomCateg(e.target.value)} } defaultValue={nomCateg}/> <br/>
+            <input style={{width:"180px" , borderWidth: "1px",marginLeft:"30px",borderStyle: "solid",borderColor : "black",height:"30px"}} type="text" placeholder='Nom de categorie' onChange={e => {setnomCateg(e.target.value)} } value={nomCateg}/> <br/>
           <br/>
             <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Texte de Catégorie</label>
 
 
-            <input style={{width:"180px" , borderWidth: "1px",marginLeft:"30px",borderStyle: "solid",borderColor : "black",height:"30px"}} type="text" placeholder='Nom de categorie' onChange={e => {settextHome(e.target.value)} } defaultValue={textHome}/> <br/>
+            <input style={{width:"180px" , borderWidth: "1px",marginLeft:"30px",borderStyle: "solid",borderColor : "black",height:"30px"}} type="text" placeholder='Nom de categorie' onChange={e => {settextHome(e.target.value)} } value={textHome}/> <br/>
 
                  </div>
            

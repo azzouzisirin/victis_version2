@@ -198,7 +198,7 @@ export default function Popup(props) {
           const newList = listText_1.concat({ Text_1 });
           setlistText_1(newList);
       
-        setText_1('')
+   
         }else{
           const newState = listText_1.map((obj,index) => {
              if (index === indText_1) {
@@ -213,6 +213,7 @@ export default function Popup(props) {
            setText_1('')
           
        }
+       setText_1('')
       };
       const updateItemText_1=({p,index})=>{
         setupdtouNonText_1(1)
@@ -383,7 +384,7 @@ export default function Popup(props) {
          <div > 
           <label style={{fontWeight:'600',fontSize:"20px"}}>  Catégorie</label>
           <select  style={{width:"150px",height:"45px",marginLeft:"20px"}} 
-              onChange={e => setcategorie( e.target.value )} defaultValue={categorie}>
+              onChange={e => setcategorie( e.target.value )} value={categorie}>
             <option value="">choisi</option>
 
             {listCategorie.map((option) => ( 
@@ -393,18 +394,18 @@ export default function Popup(props) {
             <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Type Module </label>
 
 <select  style={{width:"150px",height:"45px",marginLeft:"20px"}} 
-  onChange={e => settypeModule( e.target.value )} defaultValue={typeModule}>
+  onChange={e => settypeModule( e.target.value )} value={typeModule}>
  <option value="0">Model vide</option>
   <option value="1" >Model 1</option>   
   <option value="2" >Model 2</option>         
 
 </select>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Nom de formation </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnomFormation(e.target.value)} } defaultValue={nomFormation}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setnomFormation(e.target.value)} } value={nomFormation}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Numero d'ordre </label>
-          <input style={{width:"80px" , borderWidth: "1px",borderStyle: "solid",borderColor : "black",height:"30px"}} type="number" placeholder='Ordre de categorie' onChange={e => {setnumOrdre(e.target.value)} } defaultValue={numOrdre}/><br/> <br/>
+          <input style={{width:"80px" , borderWidth: "1px",borderStyle: "solid",borderColor : "black",height:"30px"}} type="number" placeholder='Ordre de categorie' onChange={e => {setnumOrdre(e.target.value)} } value={numOrdre}/><br/> <br/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Image </label>
-          <input type="file" accept="image/*" onChange={(e) => postDetails(e.target.files[0])} defaultValue={profilePicture}/>
+          <input type="file" accept="image/*" onChange={(e) => postDetails(e.target.files[0])} value={profilePicture}/>
           {typeModule=="0"? <></>:null}
           {typeModule=="1"? <>
 
@@ -423,7 +424,7 @@ export default function Popup(props) {
               <td>{p.Text_1}</td>
              
               <td>  
-              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/></button>
+              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/> </button>
 
                 <button  onClick={() => deleteItemText_1(p.Text_1)}>   <Delete /></button></td>
             </tr>
@@ -434,10 +435,10 @@ export default function Popup(props) {
 
     <td>     <input
               type="text"
-                         defaultValue={Text_1}
+                         value={Text_1}
               onChange={e => setText_1( e.target.value )}
             /> </td>
-            <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
+            <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> </button>
  </td>
 
     </tr>
@@ -460,7 +461,7 @@ export default function Popup(props) {
               <td>{p.TextList}</td>
              
               <td> 
-              <button onClick={() => updateItemList({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/></button>
+              <button onClick={() => updateItemList({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/> </button>
 
                 </td>
             </tr>
@@ -471,7 +472,7 @@ export default function Popup(props) {
 
     <td>     <input
               type="text"
-                         defaultValue={TextList}
+                         value={TextList}
               onChange={e => setTextList( e.target.value )}
             /> </td>
             <td>      <button onClick={addhandlerList} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
@@ -496,7 +497,7 @@ export default function Popup(props) {
               <td>{p.Text_2}</td>
              
               <td> 
-              <button onClick={() => updateItemText_2({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/></button>
+              <button onClick={() => updateItemText_2({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/> </button>
 
                 <button  onClick={() => deleteItemText_2(p.Text_2)}>   <Delete /></button></td>
             </tr>
@@ -507,10 +508,10 @@ export default function Popup(props) {
 
     <td>     <input
               type="text"
-                         defaultValue={Text_2}
+                         value={Text_2}
               onChange={e => setText_2( e.target.value )}
             /> </td>
-            <td>      <button onClick={addhandlerText_2} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
+            <td>      <button onClick={addhandlerText_2} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/> </button>
  </td>
 
     </tr>
@@ -522,9 +523,9 @@ export default function Popup(props) {
       {typeModule=="2"? <>
       <br/> <br/>
       <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Durée </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } defaultValue={duree}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } value={duree}/>
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Prix </label>
-          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } defaultValue={prix}/>
+          <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setprix(e.target.value)} } value={prix}/>
 <br/>
       <div className='tableDiv tabledecore' style={{marginTop:"20px"}}> 
      
@@ -541,7 +542,7 @@ export default function Popup(props) {
               <td>{p.Text_1}</td>
              
               <td> 
-              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/></button>
+              <button onClick={() => updateItemText_1({p,index})} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Update/> </button>
 
                 <button  onClick={() => deleteItemText_1(p.Text_1)}>   <Delete /></button></td>
             </tr>
@@ -552,10 +553,10 @@ export default function Popup(props) {
 
     <td>     <input
               type="text"
-                         defaultValue={Text_1}
+                         value={Text_1}
               onChange={e => setText_1( e.target.value )}
             /> </td>
-            <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/></button>
+            <td>      <button onClick={addhandlerText_1} style={{margin:"20px" , background:"#D0E3FA",border:"none"}}><Check/>  </button>
  </td>
 
     </tr>
@@ -597,13 +598,13 @@ export default function Popup(props) {
   
       <td>     <input
                 type="text"
-                defaultValue={new_data.titre}
+                value={new_data.titre}
                            onChange={e => setNew_data({ ...new_data, titre: e.target.value })}
 
               /> </td>
-               <td>   <input type="text" style={{width:"80%"}} defaultValue={name} onChange={handleChange} />
+               <td>   <input type="text" style={{width:"80%"}} value={name} onChange={handleChange} />
            <button type="button" onClick={handleAdd}>
-             <Check/> cc
+             <Check/> 
            </button>
            <ul>
            {listProg!= ""?listProg.map((item,index) => (
