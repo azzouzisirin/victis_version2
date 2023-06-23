@@ -23,7 +23,6 @@ import Article_1 from './pages/articles/Article_1';
 import Article_2 from './pages/articles/Article_2';
 import Article_3 from './pages/articles/Article_3';
 import Dashbord from './pages/Dashbord/Dashbord'
-import CalendrieFormation from './pages/CalendrieFormation'
 import ListFormation from './pages/ListFormation';
 import PromoVictis from './pages/PromoVictis'
 import Services from './pages/Services'
@@ -50,7 +49,6 @@ export default function App() {
           <Route path="/dashbord" element={<Dashbord />} />
           <Route path="/tableCalendrie" element={<TableCalendrie />} />
 
-          <Route path="/CalendrieFormation" element={<CalendrieFormation />} />
           <Route path="/ListFormation/:nomCateg" element={<ListFormation />}  />
           <Route path="/descritionFormation/:nomForma/:pays" element={<DescriptDetailFormation />}  />
 

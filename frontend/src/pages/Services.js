@@ -9,6 +9,8 @@ import Comp_Article from '../components/Comp_Article'
 export default function PromoVictis() {
 
 return(
+	<> 
+	<NavBar/>
     <body className="page-template-default page page-id-521 page-parent wp-embed-responsive theme-pyxl-scry woocommerce-js" data-template="base.twig">
 	<h1 className="screen-reader-text" href="#content">
 				
@@ -245,48 +247,9 @@ return(
 		</main>
 
 
-					<section className="contact  text-light bg-dark-to-grey pt-8 pb-12 md:py-17" id="footer-contact">
-	<div className="max-w-grid mx-auto px-4 grid:px-0">
-		<h3 className="text-h2Sm md:text-h2 font-semibold text-center">Connect with Us</h3>
-		<p className="mt-2 md:mt-3 text-p18 md:text-sub opacity-80 md:opacity-100 text-center max-w-564p mx-auto">Looking for product information or have a few questions for our team? Contact us today! </p>
-		<div className="mt-8 md:mt-14 xs-lg:max-w-564p lg:flex mx-auto text-dark">
-							<a className="inline-flex flex-1 lg:flex lg:flex-col items-center p-5 lg:px-8 lg:py-13 lg:text-center w-full text-link18 lg:text-h4 font-semibold hover:bg-grey-2 bg-light  drift-open-chat" href="" target="">
-					<svg className="inline-flex w-6 h-6 mr-4 lg:mr-0 lg:mb-3 fill-none stroke-current text-blue-4"><use href="#icon-message"></use></svg>
-					Live Chat
-					<p className="hidden w-full flex-auto lg:block text-p18 text-grey-4 font-normal mt-2">Need hard and fast answers right away? Connect with one of our live chat assistants.</p>
-										<span className="button-link inline-flex items-center font-semibold text-blue-4 hidden lg:inline-flex lg:text-link18 mt-auto pt-4  drift-open-chat">Connect with chat
-	<svg className="ml-2 h-6 w-6  stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"></path>
-		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
-	</svg>
-</span>
-				</a>
-							<a className="inline-flex flex-1 lg:flex lg:flex-col items-center p-5 lg:px-8 lg:py-13 lg:text-center w-full text-link18 lg:text-h4 font-semibold hover:bg-grey-2 bg-light " href="/contact" target="">
-					<svg className="inline-flex w-6 h-6 mr-4 lg:mr-0 lg:mb-3 fill-none stroke-current text-blue-4"><use href="#icon-mail"></use></svg>
-					Email
-					<p className="hidden w-full flex-auto lg:block text-p18 text-grey-4 font-normal mt-2">Do you have a more complex query? Send us an email.</p>
-										<span className="button-link inline-flex items-center font-semibold text-blue-4 hidden lg:inline-flex lg:text-link18 mt-auto pt-4 ">Contact Us
-	<svg className="ml-2 h-6 w-6  stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"></path>
-		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
-	</svg>
-</span>
-				</a>
-							<a className="inline-flex flex-1 lg:flex lg:flex-col items-center p-5 lg:px-8 lg:py-13 lg:text-center w-full text-link18 lg:text-h4 font-semibold hover:bg-grey-2 bg-light " href="tel:8888746324" target="">
-					<svg className="inline-flex w-6 h-6 mr-4 lg:mr-0 lg:mb-3 fill-none stroke-current text-blue-4"><use href="#icon-phone"></use></svg>
-					Phone
-					<p className="hidden w-full flex-auto lg:block text-p18 text-grey-4 font-normal mt-2">Want to talk it out? Speak with one of our team members.</p>
-										<span className="button-link inline-flex items-center font-semibold text-blue-4 hidden lg:inline-flex lg:text-link18 mt-auto pt-4 ">888.874.6324
-	<svg className="ml-2 h-6 w-6  stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"></path>
-		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
-	</svg>
-</span>
-				</a>
-			
-		</div>
-	</div>
-</section>
 						</body>
+<ContuctUs/>
+<Footer/>
+						</>
     )
     }

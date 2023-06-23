@@ -5,6 +5,12 @@ var FormationSchema = new mongoose.Schema({
     formation : { 
         type: String,
     },
+    module : { 
+        type: String,
+    },
+    idmodule : { 
+        type: String,
+    },
     duree: { 
         type: String,
 

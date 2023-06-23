@@ -81,7 +81,7 @@ return(
     {data.map((p)  => (
          <tr > 
     <td style={{textAlign:'left',paddingLeft:'30px'}}>
-      {p.formation}
+    Formation  {p.formation} {p.module}
     </td>
     <td>
       {p.duree}
@@ -129,7 +129,7 @@ return(
    </div>
 <ContuctUs/>
     <Footer/>
-    <ModelInscrit
+    <ModelInscrit 
                 openPopupModule={openPopupModule}
                 id={id}
                 index={index}

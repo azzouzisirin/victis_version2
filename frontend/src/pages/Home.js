@@ -177,7 +177,7 @@ return (
 			<div className="hero__content-inner lg:w-2/3 px-4 pb-4 xl:pl-0 md:pr-20">
 													<p className="mb-3 md:mb-5 text-o14 md:text-o18 uppercase font-semibold text-grey-2">BIENVENUE CHEZ VICTIS</p>
 				
-													<h1 className="md:-ml-2p hero__heading font-semibold text-h1Sm md:text-hero">Des solutions conçues par des experts conçues pour vous</h1>
+													<h1 className="md:-ml-2p hero__heading font-semibold text-h1Sm md:text-hero">Des solutions conçues par des experts pour vous</h1>
 					<p className="hero__description text-p18 md:text-sub text-left mt-5">Innovation leader de l'industrie dirigée par des ingénieurs experts. Nous sommes VICTIS.</p>
 				
 

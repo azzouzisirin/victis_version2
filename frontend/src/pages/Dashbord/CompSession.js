@@ -20,7 +20,7 @@ export default function CompSession() {
     const [prix, setprix] = useState();
     const [idforma, setidforma] = useState();
 
-    const [formation, setformation] = useState();
+    const [formation, setformation] = useState(); 
     const [module, setmodule] = useState();
 
     useEffect(() => {
@@ -81,10 +81,10 @@ export default function CompSession() {
      setopenPopupModule(true)
    
         }
-   
+    
     const deleteItemCategorie = async (id) => {
-        try{
-          const res = await axios.delete(`${BASE_URL}/categorie/${id}`)
+        try{ 
+          const res = await axios.delete(`${BASE_URL}/sessionFormation/${id}`)
           const newListItems = data.filter(item=> item._id !== id);
           setData(newListItems);
 
@@ -100,19 +100,20 @@ return(
     <br/>
 
 
-<div className='tabledecore' style={{overflow:"auto",height:"600px",width:"1000px"}}> 
+<div className='tabledecore' style={{overflow:"auto",height:"600px",width:"80%"}}> 
 <table >
 <thead>
 <tr>  
-<th > Numero d'ordre</th>
+<th style={{width:"2%"}} > Numero d'ordre</th>
 
-<th> Formation</th>
+<th style={{width:"10%"}}> Formation</th>
+<th style={{width:"10%"}}> Module </th>
 
-  <th> Durée</th>
-  <th> Prix </th>
-  <th> Session</th>
+  <th style={{width:"10%"}}> Durée</th>
+  <th style={{width:"10%"}}> Prix </th>
+  <th style={{width:"20%"}}> Session</th>
 
-  <th> Les membres</th>
+  <th style={{width:"40%"}}> Les membres</th>
  
 <th> Action</th>
 </tr> 
@@ -124,6 +125,8 @@ return(
            <tr >
             <td>{item.numDordre}</td>
             <td>{item.formation}</td>
+            <td>{item.module}</td>
+
              <td>{item.duree}</td>
             <td >{item.prix}</td>
           <td>
@@ -143,7 +146,7 @@ return(
 
 
   </td>
-  
+   
 
            </tr>
           

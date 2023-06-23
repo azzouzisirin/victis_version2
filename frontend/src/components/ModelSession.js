@@ -21,9 +21,13 @@ export default function ModelSession(props) {
     const [Text_1, setText_1] = useState();
 
     const[ indText_1,setindText_1]= useState();
+    const [listformation, setlistformation] = useState([]);
 
+    const [listmodule, setlistmodule] = useState([]);
+    const [module, setmodule] = useState();
+    const [idmodule, setidmodule] = useState();
 
-
+ 
 
 const [numOrdre,setnumOrdre]=useState();
     const [listText_1, setlistText_1] = useState([]);
@@ -45,6 +49,29 @@ const [numOrdre,setnumOrdre]=useState();
    
     ]);
     useEffect(() => {
+      const fetchData = async () => { 
+        const res = await axios.get(`${BASE_URL}/formation/getAllFormation`);
+        setlistformation(res.data);
+        setformation(res.data[0].nom)
+      
+      };
+       fetchData();
+    }, []);
+    useEffect(()=>{
+      if(formation){
+       const fetchData = async () => { 
+         const res = await axios.get(`${BASE_URL}/module/getModulByForma/${formation}`);
+         setlistmodule(res.data);
+         setmodule(res.data[0].nom)
+         setprix(res.data[0].prix)
+         setduree(res.data[0].duree)
+         setidmodule(res.data[0]._id)
+
+       };
+        fetchData();
+      }
+     },[formation])
+    useEffect(() => {
   
       const fetchData = async () => { 
         const res = await axios.get(`${BASE_URL}/sessionFormation/`+idforma);
@@ -53,11 +80,26 @@ const [numOrdre,setnumOrdre]=useState();
         setduree(res.data.duree)
         setprix(res.data.prix)
         setsession(res.data.Session)
+        setidmodule(res.data._id)
+
    
 
       };
        fetchData();
     }, [idforma]);
+    useEffect(()=>{
+      if(module){
+       const fetchData = async () => { 
+         const res = await axios.get(`${BASE_URL}/module/getModule/${formation}/${module}`);
+         setprix(res.data.prix);
+         setduree(res.data.duree);
+         setidmodule(res.data._id)
+
+   
+       };
+        fetchData();
+      }
+     },[module])
       const addhandlerSession = e => {
         e.preventDefault();
      
@@ -111,12 +153,13 @@ const [numOrdre,setnumOrdre]=useState();
             };
             const res = await axios.put(BASE_URL+"/sessionFormation/updateSession/"+idforma, {
               formation:formation,
+              idmodule:idmodule,
               duree:duree,
-         
+              module:module,
               prix:prix,
               numDordre:numOrdre,
               Session:session,
-            } ,
+            } , 
           
           config
         );
@@ -137,8 +180,9 @@ const [numOrdre,setnumOrdre]=useState();
             };
             const res = await axios.post(BASE_URL+"/sessionFormation/register", {
               formation:formation,
+              idmodule:idmodule,
               duree:duree,
-         
+              module:module,
               prix:prix,
               numDordre:numOrdre,
               Session:session,
@@ -168,15 +212,27 @@ const [numOrdre,setnumOrdre]=useState();
             <br/>
          <div > 
          <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Numero d'ordre </label>
-            <input type='text'  style={{width:"150px",height:"45px",marginLeft:"20px"}} 
+            <input type='number'  style={{width:"80px" , borderWidth: "1px",borderStyle: "solid",borderColor : "black",height:"40px",marginLeft:"10px"}}
               onChange={e => setnumOrdre( e.target.value )} value={numOrdre}/>
 
           <label style={{fontWeight:'600',fontSize:"20px"}}>  Formation</label>
-          <input type='text'  style={{width:"150px",height:"45px",marginLeft:"20px"}} 
-              onChange={e => setformation( e.target.value )} value={formation}/>
-
- 
          
+<select  style={{width:"150px",height:"45px",marginLeft:"20px"}} 
+              onChange={e => setformation( e.target.value )} value={formation}>
+
+            {listformation.map((option) => ( 
+              <option value={option.nom}>{option.nom}</option>
+            ))}
+            </select>
+            <label style={{fontWeight:'600',fontSize:"20px"}}>  Module</label>
+         
+         <select  style={{width:"150px",height:"45px",marginLeft:"20px"}} 
+                       onChange={e => setmodule( e.target.value )} value={module}>
+         
+                     {listmodule.map((option) => ( 
+                       <option value={option.nom}>{option.nom}</option>
+                     ))}
+                     </select>
        
           <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Durée   </label>
           <input type="text" style={{width:"150px",height:"30px"}} onChange={e => {setduree(e.target.value)} } value={duree}/>

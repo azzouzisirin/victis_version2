@@ -16,6 +16,9 @@ const useStyles = makeStyles(theme => ({
 export default function ModelInscrit(props) {
 
     const {  openPopupModule, setopenPopupModule ,id,index} = props;
+    const [checked, setChecked] = useState(false); 
+    const [affich, setaffich] = useState(false); 
+
     const classes = useStyles();
     const [membre, setmembre] = useState({
       nom: "",
@@ -39,7 +42,8 @@ export default function ModelInscrit(props) {
  
     const ajoutrInscript = async (e) => {
       e.preventDefault();
-         try{
+      if(checked==true){
+        try{
           const config = {
             headers: { 
               "Content-type": "application/json",
@@ -63,10 +67,19 @@ export default function ModelInscrit(props) {
         }catch(err){
           console.log(err);
         }
+      }
+      else{
+        setaffich(true)
+      }
+      
       
     
       }
-  
+      const handleChange = () => { 
+    
+        setChecked(!checked); 
+        
+      }; 
   
  
   
@@ -89,7 +102,8 @@ export default function ModelInscrit(props) {
             <br/>
           
             <div style={{marginLeft:"30px"}}>
-            <p> <span style={{fontWeight:"bold",fontSize:"20px"}}>  Formation souhaitée : </span> <br/> {formation.formation } </p>
+            <p> <span style={{fontWeight:"bold",fontSize:"20px"}}>  Formation souhaitée : </span> 
+            <br/> Formation {formation.formation } {formation.module } : Les Fondamentaux (<a href={'/DescriptModule/'+formation.idmodule } target='_blank' style={{color:"blue"}}>en savoir plus</a>) </p>
             <br/> 
       <p> <span style={{fontWeight:"bold",fontSize:"20px"}}>  Tarif : </span>  {formation.prix } € </p>
       <br/> 
@@ -97,20 +111,21 @@ export default function ModelInscrit(props) {
       <br/> 
        <p><span style={{fontWeight:"bold",fontSize:"20px",marginBottom:"15px"}}>  Vos coordonnées : </span> </p>
        <br/> 
-       <input type='text' style={{width:"570px",height:"30px",marginBottom:"15px"}} placeholder='Nom et prénom' value={membre.nom}
+       <input type='text' style={{width:"570px",height:"30px",marginBottom:"15px"}} placeholder='Nom et prénom' required value={membre.nom} 
                            onChange={e => setmembre({ ...membre, nom: e.target.value })} /> <br/>
-       <input type='text' style={{width:"570px",height:"30px",marginBottom:"15px"}} placeholder='Téléphone'  value={membre.telephne}
+       <input type='text' style={{width:"570px",height:"30px",marginBottom:"15px"}} placeholder='Téléphone'  value={membre.telephne} required
                            onChange={e => setmembre({ ...membre, telephne: e.target.value })} /><br/>
-       <input type='text' style={{width:"570px",height:"30px",marginBottom:"15px"}} placeholder='Email'  value={membre.email}
+       <input type='text' style={{width:"570px",height:"30px",marginBottom:"15px"}} placeholder='Email'  value={membre.email} required
                            onChange={e => setmembre({ ...membre, email: e.target.value })}/><br/>
-       <textarea  style={{width:"570px",height:"90px",marginBottom:"15px"}} placeholder='Information complémentaire'  value={membre.information}
+       <textarea  style={{width:"570px",height:"90px",marginBottom:"15px"}} placeholder='Information complémentaire'  value={membre.information} required
                            onChange={e => setmembre({ ...membre, information: e.target.value })}/>
        <p> <span style={{fontWeight:"bold",fontSize:"20px"}}>  RGPD : </span> </p>
      <div style={{display:"flex"}}>
       
-    <input type='checkbox' style={{marginRight:"15px"}}/>
+    <input type='checkbox' style={{marginRight:"15px"}} onChange={handleChange}/>
       <p style={{fontSize:"10px",marginTop:"10px"}}>En soumettant ce formulaire, j’accepte que les informations saisies  soient exploitées dans le cadre de la demande de <br/>  contact/devis et de la relation commerciale qui peut en découler. *</p>
       </div> 
+     {affich==true? <p style={{color:'red'}}> Ce champ est obligatoire.</p>:null}
        </div> 
        <button style={{width:'80%',background:'black',color:"white",textAlign:"center",fontSize:"21px",margin:"20px 9%",borderRadius:"7px"}}onClick={e => ajoutrInscript(e)} > Envoye</button>
 </div>

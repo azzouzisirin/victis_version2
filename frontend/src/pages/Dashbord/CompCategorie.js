@@ -157,7 +157,7 @@ return(
 
       </form>
 <br/>
-<div className='tabledecore' style={{overflow:"auto",height:"600px",width:"1000px"}}> 
+<div className='tabledecore' style={{overflow:"auto",height:"600px",width:"1050px"}}> 
 <table >
 <thead>
 <tr>  
