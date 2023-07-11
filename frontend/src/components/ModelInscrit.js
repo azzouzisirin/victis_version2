@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
         paddingRight: '0px'
     }
 }))
-
+ 
 export default function ModelInscrit(props) {
 
     const {  openPopupModule, setopenPopupModule ,id,index} = props;
@@ -31,13 +31,14 @@ export default function ModelInscrit(props) {
 
     const [formation, setformation] = useState({});
     useEffect(() => {
+      if(id){ 
       const fetchData = async () => { 
         const res = await axios.get(`${BASE_URL}/sessionFormation/${id}`);
         setformation(res.data);
         setmembre({ ...membre, session: res.data.Session[index] })
       console.log(res.data)
       };
-       fetchData();
+       fetchData();}
     }, [id,index]);
  
     const ajoutrInscript = async (e) => {

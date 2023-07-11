@@ -8,7 +8,7 @@ const uploadMiddleware = require("../middlewares/MulterMiddleware");
 router.route('/getAllCategorie').get(getAllCategorie);
 router.route('/:id').delete(deleteCategorie);
 router.route('/register').post(Register);
-router.route('/:id').put(updateCategorie);   
+router.route('/:id').put(updateCategorie);    
 
 router.post("/api/save", uploadMiddleware.single("photo"),async (req, res) => {
     try {

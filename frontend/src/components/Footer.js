@@ -1,9 +1,40 @@
-import React from 'react';
-
+import React, { useState,useEffect } from "react";
+import axios from "axios";
+import {BASE_URL} from "../helper"
 
 export default function Footer() {
- 
+	const [nomCateg_1, setnomCateg_1] = useState('');
+	const [nomCateg_2, setnomCateg_2] = useState('');
+	const [nomCateg_3, setnomCateg_3] = useState('');
+	const [nomCateg_4, setnomCateg_4] = useState('');
+	const [dataCtegorie, setDataCtegorie] = useState([]);
 
+	useEffect(() => {
+   
+		const fetchData = async () => {
+		  const res = await axios.get(`${BASE_URL}/categorie/getAllCategorie`);
+		  setDataCtegorie(res.data);
+		};
+		 fetchData();
+	  }, []);
+	  useEffect(() => {
+   
+		if(dataCtegorie){
+         if(dataCtegorie[0]){
+			setnomCateg_1(dataCtegorie[0].nom)
+		 }
+		 if(dataCtegorie[1]){
+			setnomCateg_2(dataCtegorie[1].nom)
+		 }
+		 if(dataCtegorie[2]){
+			setnomCateg_3(dataCtegorie[2].nom)
+		 }
+		 if(dataCtegorie[3]){
+			setnomCateg_4(dataCtegorie[3].nom)
+		 }
+	
+		}
+	  }, [dataCtegorie]);
     
 return (  
 		
@@ -13,9 +44,9 @@ return (
 
 				<div className="pl-6 lg:pl-0 max-w-128 mx-auto">
 			
-			<img className="lg:mx-auto" style={{width:"150px",height:"100px"}} src='../../img/logo_victis.png'/>
+			<img  style={{width:"150px",height:"100px",marginLeft:"27%"}} src='../../../img/logo_victis.png'/>
 
-									<div className="mt-8 flex lg:hidden">
+									<div className="flex lg:hidden"style={{marginLeft:"22%",marginTop:"20px"}}>
 									<a href="" target="" className="">
 						<svg className="h-6 w-6 fill-none text-blue-2">
 							<use href="#icon-twitter"></use>
@@ -42,111 +73,65 @@ return (
 				<div className="lg:flex lg:mt-12 lg:max-w-grid lg:mx-auto lg:pl-4 xl:pl-0">
 			<nav className="mt-6 lg:hidden mx-auto flex flex-wrap max-w-128">
 							<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href="/categorie">
-							Les Catégories
+							<p className="text-o14 tracking-07 leading-22p text-grey-3 font-semibold uppercase"> Les Catégories </p></a>
+													<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href={"/ListFormation/"+nomCateg_1}>
+													 {nomCateg_1}
 							</a>
-													<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href="">
-								Software
+													<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href={"/ListFormation/"+nomCateg_2}>
+													 {nomCateg_2}
 							</a>
-													<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href="">
-								Services
+													<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href={"/ListFormation/"+nomCateg_3}>
+													 {nomCateg_3}
 							</a>
-													<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href="">
-								Training
+													<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href={"/ListFormation/"+nomCateg_4}>
+													 {nomCateg_4}
 							</a>
-													<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href="">
-								Staffing
-							</a>
-													<a className="px-6 py-5 lg:p-0 lg:pt-4 block w-full xs-lg:w-1/2 text-link16 font-semibold hover:text-grey-3 ease-200" href="">
-								Resources
-							</a>
+							
 																															
-						<div x-data="{ open: false}"  className="w-full xs-lg:w-1/2 lg:hidden" >
-							<button  className="footer__menu-head px-6 py-5 lg:p-0 lg:pt-4 text-link16 font-semibold w-full ease-200 hover:text-grey-3 text-left flex justify-between" aria-controls="footer-dropdown-1">
-								About
-								<figure className="ml-auto inline h-6 w-6 relative">
-									<svg  className="transition transform ease-in-out duration-300 absolute inset-0 w-full h-full stroke-current text-blue-2">
-										<use href="#icon-plus"></use>
-									</svg>
-									<svg className="absolute inset-0 w-full h-full stroke-current text-blue-2">
-										<use href="#icon-minus"></use>
-									</svg>
-								</figure>
-							</button>
-							<nav  className="footer__menu-subnav mx-5 border-b-2 border-clear transition-max-h duration-500 ease-in-out max-h-0 overflow-hidden" id="footer-dropdown-1"  aria-hidden="true">
-																	<a className="pl-3 pr-6 pb-6 lg:p-0 lg:pt-4 block text-p16 w-full hover:text-grey-3 ease-200" href="">
-										Our Company
-									</a>
-																	<a className="pl-3 pr-6 pb-6 lg:p-0 lg:pt-4 block text-p16 w-full hover:text-grey-3 ease-200" href="">
-										Careers
-									</a>
-																	<a className="pl-3 pr-6 pb-6 lg:p-0 lg:pt-4 block text-p16 w-full hover:text-grey-3 ease-200" href="">
-										Locations
-									</a>
-															</nav>
-						</div>
+					
 																									
-						<div x-data="{ open: false}"  className="w-full xs-lg:w-1/2 lg:hidden" >
-							<button  className="footer__menu-head px-6 py-5 lg:p-0 lg:pt-4 text-link16 font-semibold w-full ease-200 hover:text-grey-3 text-left flex justify-between" aria-controls="footer-dropdown-2">
-								Need Help?
-								<figure className="ml-auto inline h-6 w-6 relative">
-									<svg  className="transition transform ease-in-out duration-300 absolute inset-0 w-full h-full stroke-current text-blue-2">
-										<use href="#icon-plus"></use>
-									</svg>
-									<svg className="absolute inset-0 w-full h-full stroke-current text-blue-2">
-										<use href="#icon-minus"></use>
-									</svg>
-								</figure>
-							</button>
-							<nav  className="footer__menu-subnav mx-5 border-b-2 border-clear transition-max-h duration-500 ease-in-out max-h-0 overflow-hidden" id="footer-dropdown-2"  aria-hidden="true">
-																	<a className="pl-3 pr-6 pb-6 lg:p-0 lg:pt-4 block text-p16 w-full hover:text-grey-3 ease-200" href="">
-										Contact Us
-									</a>
-																	<a className="pl-3 pr-6 pb-6 lg:p-0 lg:pt-4 block text-p16 w-full hover:text-grey-3 ease-200" href="">
-										Support 
-									</a>
-																	<a className="pl-3 pr-6 pb-6 lg:p-0 lg:pt-4 block text-p16 w-full hover:text-grey-3 ease-200" href="tel:+33 (0)9 63 22 47 40">
-										Phone
-									</a>
-															</nav>
-						</div>
+						
 												</nav>
 
 									<div className="hidden lg:flex">
 																				<nav className="flex flex-col pr-12 lg:w-196p">
 																						
 															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 font-semibold" href="/categorie">
-															Les Catégories 
+															<p className="text-o14 tracking-07 leading-22p text-grey-3 font-semibold uppercase"> Les Catégories </p>
 								</a>
-															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 font-semibold" href="">
-                                                            Prestations de service
+															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 font-semibold" href={"/ListFormation/"+nomCateg_1}>
+                                                             {nomCateg_1}
 								</a>
-															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 font-semibold" href="">
-                                                            Entraînement
+															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 font-semibold" href={"/ListFormation/"+nomCateg_2}>
+                                                             {nomCateg_2}
 								</a>
-															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 font-semibold" href="">
-                                                            Recrutement
+															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 font-semibold" href={"/ListFormation/"+nomCateg_3}>
+															 {nomCateg_3}
 								</a>
-															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 font-semibold" href="">
-									Actualités
+															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 font-semibold" href={"/ListFormation/"+nomCateg_4}>
+															 {nomCateg_4}
 								</a>
 													</nav>
 																									<nav className="flex flex-col pr-12 lg:w-196p">
 															<p className="text-o14 tracking-07 leading-22p text-grey-3 font-semibold uppercase">
-                                                            À propos
+															A propos de nos formations :
 								</p>
-																						<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 " href="">
-                                                                                        Notre compagnie
+																						<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 " href="./Reglement interieur.pdf" target="_blank">
+                                                                                        Règlement intérieur
 								</a>
-															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 " href="">
-                                                            Carrières
+															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 " href="/financer">
+                                                            Financer une formation
 								</a>
-															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 " href="">
-                                                            Emplacements
+															<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 " href="/mentionsLegales">
+                                                            Mentions légales
+								</a>
+								<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 " href="/politiqueConfidentialite">
+								Politique de confidentialité
 								</a>
 													</nav>
 																									<nav className="flex flex-col pr-12 lg:w-196p">
 															<p className="text-o14 tracking-07 leading-22p text-grey-3 font-semibold uppercase">
-                                                            Besoin d'aide?
+                                                            BESOIN D'AIDE
 								</p>
 																						<a className="text-p16 pt-4 hover:text-grey-3 ease-200 first:pt-0 " href="">
                                                                                         Contactez-nous

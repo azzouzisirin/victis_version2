@@ -1,4 +1,5 @@
 const Module = require('../models/Module');
+const Categorie = require('../models/Categories');
 
 exports.Register = async (req, res) => {
     try { 
@@ -46,9 +47,10 @@ exports.getModulByForma = async (req, res) => {
 exports.getModulFormaModul = async (req, res) => {
     try {
 
+         const categorie=await Categorie.findOne({nom:req.params.nomCateg})
         const allmodule = await Module.findOne({nomFormation:req.params.nomForma,nom:req.params.nomModul}).sort({ numOrdre: 1 });
 
-        res.json(allmodule);
+        res.json({categorie:categorie,allmodule:allmodule});
     } catch (error) {
         res.status(400).json({
             status: 'failed',

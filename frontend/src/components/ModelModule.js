@@ -179,6 +179,9 @@ const [numOrdre,setnumOrdre]=useState();
       useEffect(() => {
   
         const fetchData = async () => { 
+          if(idforma){
+
+          
           const res = await axios.get(`${BASE_URL}/module/getModuleById/`+idforma);
           setnomModule(res.data.nom);
           setformation(res.data.nomFormation)
@@ -193,6 +196,7 @@ const [numOrdre,setnumOrdre]=useState();
 
         };
          fetchData();
+        }
       }, [idforma]);
 
       const addhandlerText_1 = e => {

@@ -2,6 +2,9 @@
 const mongoose = require('mongoose');
 
 var FormationSchema = new mongoose.Schema({
+    categorie : { 
+        type: String,
+    },
     formation : { 
         type: String,
     },

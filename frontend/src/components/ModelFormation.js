@@ -168,6 +168,7 @@ export default function Popup(props) {
          fetchData();
       }, []);
       useEffect(() => {
+        if(idforma){
         const fetchData = async () => { 
           const res = await axios.get(`${BASE_URL}/formation/getFormationById/`+idforma);
           setnomFormation(res.data.Formation.nom);
@@ -183,6 +184,7 @@ export default function Popup(props) {
 
         };
          fetchData();
+      }
       }, [idforma]);
       const addhandlerText_1 = e => {
         e.preventDefault();

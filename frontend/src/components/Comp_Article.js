@@ -17,7 +17,7 @@ export default function Comp_Article  () {
                     <section className="preview relative w-312p h-416p md:w-368p md:h-496p flex flex-col overflow-hidden">
 <figure className="absolute inset-0 w-full h-312p md:h-370p  overflow-hidden">
     <a href="/article_1" target="_self">
-        <img className="lozad w-full h-full object-cover" src="../../img/3D-printing-automotive-materials-from-Stratasys.webp" alt="SOLIDWORKS Shortcut Keys: How to Accelerate your Design"/>
+        <img className="lozad w-full h-full object-cover" src="../../../../img/3D-printing-automotive-materials-from-Stratasys.webp" alt="SOLIDWORKS Shortcut Keys: How to Accelerate your Design"/>
     </a>
 </figure>
                 <a className="preview__body preview__body-post flex flex-col mt-auto pt-22p pb-5 px-5 w-full bg-grey-5 z-10 min-h-126p" href="/article_1" target="_self">
@@ -38,7 +38,7 @@ export default function Comp_Article  () {
                     <section className="preview relative w-312p h-416p md:w-368p md:h-496p flex flex-col overflow-hidden">
 <figure className="absolute inset-0 w-full h-312p md:h-370p  overflow-hidden">
     <a href="/article_2" target="_self">
-        <img className="lozad w-full h-full object-cover" src="../../img/Template-.webp" alt=" Tests Alevio Spine’s Implants Through SOLIDWORKS Simulation"/>
+        <img className="lozad w-full h-full object-cover" src="../../../img/Template-.webp" alt=" Tests Alevio Spine’s Implants Through SOLIDWORKS Simulation"/>
     </a>
 </figure>
                 <a className="preview__body preview__body-post flex flex-col mt-auto pt-22p pb-5 px-5 w-full bg-grey-5 z-10 min-h-126p" href="/article_2" target="_self">
@@ -59,7 +59,7 @@ export default function Comp_Article  () {
                     <section className="preview relative w-312p h-416p md:w-368p md:h-496p flex flex-col overflow-hidden">
 <figure className="absolute inset-0 w-full h-312p md:h-370p  overflow-hidden">
     <a href="/article_3" target="_self">
-        <img className="lozad w-full h-full object-cover" src="../../img/VICTIS-Staffing-Hero-Option1-scaled-2-984x472-c-default.jpg" alt="What Your Generic Staffing Firm Can&#39;t Do"/>
+        <img className="lozad w-full h-full object-cover" src="../../../img/VICTIS-Staffing-Hero-Option1-scaled-2-984x472-c-default.jpg" alt="What Your Generic Staffing Firm Can&#39;t Do"/>
     </a>
 </figure>
                 <a className="preview__body preview__body-post flex flex-col mt-auto pt-22p pb-5 px-5 w-full bg-grey-5 z-10 min-h-126p" href="/article_3" target="_self">

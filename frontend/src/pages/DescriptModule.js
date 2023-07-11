@@ -9,35 +9,33 @@ import Comp_Article from '../components/Comp_Article'
 
 export default function DescriptModule() {
     const [isShown, setIsShown] = useState(0);
-	const { id  } = useParams();
+	const { nomModul ,nomFormation ,nomCateg} = useParams();
 	const [nom, setnom] = useState();
 	const [typeModule, settypeModule] = useState();
 
-	const [nomFormation, setnomFormation] = useState([]);
 	const [duree, setduree] = useState();
 	const [dureeHeur, setdureeHeur] = useState();
+	const [photo, setphoto] = useState();
 
 	const [text_1, settext_1] = useState([]);
 	const [prix, setprix] = useState([]); 
 	const [programme,setprogramme]= useState([]);
 	const [programmeModel2,setprogrammeModel2]= useState([]);
 
-	const photo=localStorage.getItem("photo")
-	const idFormation=localStorage.getItem("IdFormation")
-	const nomCateg=localStorage.getItem("nomCateg")
 	useEffect(() => {
+		 
    
-		const fetchData = async () => {
-		  const res = await axios.get(`${BASE_URL}/module/getModuleById/`+id);
-		  setnom(res.data.nom);
-		  setnomFormation(res.data.nomFormation)
-		  setduree(res.data.duree)
-		  settext_1(res.data.text_1)
-		  settypeModule(res.data.typeModule)
+		const fetchData = async () => { 
+		  const res = await axios.get(`${BASE_URL}/module/getModule/`+nomCateg+"/"+nomFormation+"/"+nomModul);
+		  setnom(res.data.allmodule.nom);
+		  setduree(res.data.allmodule.duree)
+		  settext_1(res.data.allmodule.text_1)
+		  settypeModule(res.data.allmodule.typeModule)
 
-		  setprix(res.data.prix) 
-          setprogramme(res.data.programme)
-		  setprogrammeModel2(res.data.progModel)
+		  setprix(res.data.allmodule.prix) 
+          setprogramme(res.data.allmodule.programme)
+		  setprogrammeModel2(res.data.allmodule.progModel)
+		  setphoto(res.data.categorie.photo)
 
 
 		};
@@ -86,7 +84,7 @@ return(
                     Formations {nomCateg}
 
 		</a>
-					<a href={"/DescriptFormation/"+idFormation} className="cursor-pointer  inline-flex items-center text-p14 md:text-p16 -mr-1 first:mr-0 font-semibold -md:hidden" target="_self">
+					<a href={"/DescriptFormation/"+nomFormation} className="cursor-pointer  inline-flex items-center text-p14 md:text-p16 -mr-1 first:mr-0 font-semibold -md:hidden" target="_self">
 							<svg className="pointer-events-none mx-2 h-full w-4 transform -rotate-90 text-dark" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 					<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="1" strokeMiterlimit="10" strokeLinecap="square"></path>
 				</svg>
@@ -110,7 +108,7 @@ return(
 							<use  href="#icon-search"></use>
 						</svg>
 					</div>
-											<a data-fancybox="gallery" href="./img/SW-Software-Image-Standard-1024x1024.png" className="product-image-zoom block w-full h-full"   style={{position: "relative", overflow: "hidden"}}>
+											<a data-fancybox="gallery" href="" className="product-image-zoom block w-full h-full"   style={{position: "relative", overflow: "hidden"}}>
 							<img src={photo} alt={photo} className="p-5 lozad w-full h-full object-contain bg-grey-1" data-loaded="true"/>
 						<img role="presentation" src={photo} alt={photo} className="zoomImg" style={{position: "absolute", top: "-118.452px", left: "-185.005px", opacity: "0", width: "768px", height: "768px", border: "none",maxWidth: "none", maxHeight: "none"}}/></a>
 														</div>
@@ -264,7 +262,7 @@ Salariés, étudiants, demandeurs d’emploi …</p>
 		
 			{isShown==2?	<div className="divVisible" style={{width:"70%",paddingTop:"20px"}} >
 							<p>Certifopac atteste que nos prestations ont été évaluées et jugées conformes aux exigences du Référentiel national qualité au titre de la catégorie 'Actions de formation' (L.6313-1).</p>
-				<img src='../img/logo/qualiopi-logo.png'/> 
+				<img src='../../../img/logo/qualiopi-logo.png'/> 
 				<p>Ce label Qualiopi nous permet d’être référencé par les financeurs de la formation professionnelle continue.</p>
 			</div>:null}
 
@@ -350,7 +348,7 @@ Salariés, étudiants, demandeurs d’emploi …</p>
 			<hr className="w-20 h-0 border-t-2 border-blue-2"/>
 			<div style={{textAlign:"center",marginTop:"40px"}} >
 							<p>Certifopac atteste que nos prestations ont été évaluées et jugées conformes aux exigences du Référentiel national qualité au titre de la catégorie 'Actions de formation' (L.6313-1).</p>
-				<img src='../img/logo/qualiopi-logo.png' style={{margin:"auto"}}/> 
+				<img src='../../../img/logo/qualiopi-logo.png' style={{margin:"auto"}}/> 
 				<p>Ce label Qualiopi nous permet d’être référencé par les financeurs de la formation professionnelle continue.</p>
 			</div>
 			</div>

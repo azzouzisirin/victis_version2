@@ -26,6 +26,7 @@ export default function ModelSession(props) {
     const [listmodule, setlistmodule] = useState([]);
     const [module, setmodule] = useState();
     const [idmodule, setidmodule] = useState();
+    const [nomCateg, setnomCateg] = useState();
 
  
 
@@ -72,7 +73,7 @@ const [numOrdre,setnumOrdre]=useState();
       }
      },[formation])
     useEffect(() => {
-  
+  if(idforma){
       const fetchData = async () => { 
         const res = await axios.get(`${BASE_URL}/sessionFormation/`+idforma);
         setnumOrdre(res.data.numDordre);
@@ -85,12 +86,12 @@ const [numOrdre,setnumOrdre]=useState();
    
 
       };
-       fetchData();
+       fetchData();}
     }, [idforma]);
     useEffect(()=>{
-      if(module){
-       const fetchData = async () => { 
-         const res = await axios.get(`${BASE_URL}/module/getModule/${formation}/${module}`);
+      if(module&&nomCateg&&formation){
+       const fetchData = async () => {  
+         const res = await axios.get(`${BASE_URL}/module/getModule/${nomCateg}/${formation}/${module}`);
          setprix(res.data.prix);
          setduree(res.data.duree);
          setidmodule(res.data._id)
@@ -99,7 +100,7 @@ const [numOrdre,setnumOrdre]=useState();
        };
         fetchData();
       }
-     },[module])
+     },[module,formation,nomCateg])
       const addhandlerSession = e => {
         e.preventDefault();
      

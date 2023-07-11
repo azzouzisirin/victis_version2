@@ -75,7 +75,25 @@ exports.getFormationById = async (req, res) => {
         });
     }
 };
+exports.getFormationByName = async (req, res) => {
+    try {
+        const Formation= await formation.findOne({nom:req.params.nomForma});
 
+        const nom=req.params.nomForma
+        const allModule = await Module.find({nomFormation:nom}).sort({ numOrdre: 1 }); 
+
+        res.json({
+            Formation:Formation,
+            nom:nom,
+            allModule:allModule
+       });
+    } catch (error) {
+        res.status(400).json({
+            status: 'failed',
+            error
+        });
+    }
+};
 exports.deleteFormation = async (req, res) => {
     try {
         const Formation = await formation.findByIdAndDelete(req.params.id).sort({ numOrdre: 1 });

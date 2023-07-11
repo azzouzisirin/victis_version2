@@ -198,7 +198,7 @@ return (
 
 	<div className="menu-bar hidden lg:flex items-center justify-between h-16 pl-8 pr-6 relative bg-dark"> 
 		<a href="/" target="_self" className="block h-8 my-auto">
-			<img className=" hidden lg:block" width="95px" height="30px" style={{marginTop:"-40px"}} src="../../img/logo_VICTIS.png" alt="logo"/>
+			<img className=" hidden lg:block" width="95px" height="30px" style={{marginTop:"-40px"}} src="../../../../img/logo_VICTIS.png" alt="logo"/>
 			
 		</a>
 		<nav className="header-menu list-none h-full"  >
@@ -338,16 +338,16 @@ return (
 		<div className="mt-8">
 							<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 drift-open-chat" href="" target="">
 				
-					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/Message.svg" width="50px"/>
+					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/Message.svg" width="50px"/>
 					Connectez-vous avec le chat
 				</a>
 							<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 " href="/contactUs" target="">
-							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/chat.svg"width="50px"/>
+							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/chat.svg"width="50px"/>
 
 					Contactez-nous
 				</a>
 							<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 " href="tel:8888746324" target="">
-							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/tel.svg"width="50px"/>
+							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/tel.svg"width="50px"/>
 
 					+33 (0)9 63 22 47 40
 				</a>
@@ -420,7 +420,7 @@ return (
 	<section className="preview relative w-312p h-416p md:w-368p md:h-496p flex flex-col overflow-hidden">
 	<figure className="absolute inset-0 w-full h-full overflow-hidden">
 		<a href="" target="">
-			<img className="lozad w-full h-full object-cover" src="../../img/excellerant-feature.jpg" alt="Excellerant DNC Solution" data-loaded="true"/>
+			<img className="lozad w-full h-full object-cover" src="../../../img/excellerant-feature.jpg" alt="Excellerant DNC Solution" data-loaded="true"/>
 		</a>
 	</figure>
 					<a className="preview__body preview__body-featured flex flex-col mt-auto pt-22p pb-5 px-5 w-full bg-body-overlay z-10" href="" target="">
@@ -446,16 +446,16 @@ return (
 <div className="mt-8">
 					<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 drift-open-chat" href="" target="">
 		
-			<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/Message.svg" width="50px"/>
+			<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/Message.svg" width="50px"/>
 			Connectez-vous avec le chat
 		</a>
 					<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 " href="" target="">
-					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/chat.svg"width="50px"/>
+					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/chat.svg"width="50px"/>
 
 			Contactez-nous
 		</a>
 					<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 " href="tel:8888746324" target="">
-					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/tel.svg"width="50px"/>
+					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/tel.svg"width="50px"/>
 
 			+33 (0)9 63 22 47 40
 		</a>
@@ -486,7 +486,7 @@ return (
 	<section className="preview relative w-312p h-416p md:w-368p md:h-496p flex flex-col overflow-hidden">
 	<figure className="absolute inset-0 w-full h-full overflow-hidden">
 		<a href="" target="">
-			<img className="lozad w-full h-full object-cover" src="../../img/Staffing-feature-736x996-2.webp" alt="VICTIS Staffing Services" data-loaded="true"/>
+			<img className="lozad w-full h-full object-cover" src="../../../img/Staffing-feature-736x996-2.webp" alt="VICTIS Staffing Services" data-loaded="true"/>
 		</a>
 	</figure>
 					<a className="preview__body preview__body-featured flex flex-col mt-auto pt-22p pb-5 px-5 w-full bg-body-overlay z-10" href="" target="">
@@ -512,16 +512,16 @@ return (
 		<div className="mt-8">
 							<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 drift-open-chat" href="" target="">
 				
-					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/Message.svg" width="50px"/>
+					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/Message.svg" width="50px"/>
 					Connectez-vous avec le chat
 				</a>
 							<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 " href="/contactUs" target="">
-							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/chat.svg"width="50px"/>
+							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/chat.svg"width="50px"/>
 
 					Contactez-nous
 				</a>
 							<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 " href="tel:8888746324" target="">
-							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/tel.svg"width="50px"/>
+							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/tel.svg"width="50px"/>
 
 					+33 (0)9 63 22 47 40
 				</a>
@@ -598,7 +598,7 @@ return (
 	<section className="preview relative w-312p h-416p md:w-368p md:h-496p flex flex-col overflow-hidden">
 	<figure className="absolute inset-0 w-full h-full overflow-hidden">
 		<a href="" target="_blank">
-			<img className="lozad w-full h-full object-cover" src="../../img/erp-mes-category.jpg" alt="ERP and MES Category" data-loaded="true"/>
+			<img className="lozad w-full h-full object-cover" src="../../../img/erp-mes-category.jpg" alt="ERP and MES Category" data-loaded="true"/>
 		</a>
 	</figure>
 					<a className="preview__body preview__body-featured flex flex-col mt-auto pt-22p pb-5 px-5 w-full bg-body-overlay z-10" href="" target="_blank">
@@ -650,7 +650,7 @@ return (
 	<section className="preview relative w-312p h-416p md:w-368p md:h-496p flex flex-col overflow-hidden">
 	<figure className="absolute inset-0 w-full h-full overflow-hidden">
 		<a href="" target="_blank">
-			<img className="lozad w-full h-full object-cover" src="../../img/post3.b54cf19b.jpg" alt="" data-loaded="true"/>
+			<img className="lozad w-full h-full object-cover" src="../../../img/post3.b54cf19b.jpg" alt="" data-loaded="true"/>
 		</a>
 	</figure>
 					<a className="preview__body preview__body-featured flex flex-col mt-auto pt-22p pb-5 px-5 w-full bg-body-overlay z-10" href="" target="_blank">
@@ -676,16 +676,16 @@ return (
 		<div className="mt-8">
 							<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 drift-open-chat" href="" target="">
 				
-					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/Message.svg" width="50px"/>
+					<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/Message.svg" width="50px"/>
 					Connectez-vous avec le chat
 				</a>
 							<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 " href="/contactUs" target="">
-							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/chat.svg"width="50px"/>
+							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/chat.svg"width="50px"/>
 
 					Contactez-nous
 				</a>
 							<a className="mt-5 text-link21 font-semibold flex hover:text-blue-2 " href="tel:8888746324" target="">
-							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../img/tel.svg"width="50px"/>
+							<img  className="icon  fill-none stroke-current text-blue-2 items-center mr-3" src="../../../img/tel.svg"width="50px"/>
 
 					+33 (0)9 63 22 47 40
 				</a>
@@ -700,7 +700,7 @@ return (
 	<nav className="navmenu" style={{width:"90%"}} >
 	{menuAffiche==0?	<div >
 		<div className=" flex h-20 bg-grey-5 sticky top-0 z-10 "  >
-		<img  width="80px" height="40px" style={{marginTop:"5px"}} src="../../img/logo_VICTIS.png" alt="logo"/>
+		<img  width="80px" height="40px" style={{marginTop:"5px"}} src="../../../../img/logo_VICTIS.png" alt="logo"/>
 
 								<button className="mobile-menu-close h-full self-start flex ml-auto" onClick={() =>setMenuOpen(false)}  >
 									<svg className="h-full w-16 text-blue-2 hover:bg-grey-4 mb-auto justify-center items-center flex p-4">

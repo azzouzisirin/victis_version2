@@ -3,7 +3,7 @@ const sessionFormation = require('../models/SessionFormation');
 
 exports.Register = async (req, res) => {
     try { 
-        const newutilisateur = await sessionFormation.create({formation:req.body.formation,module:req.body.module,idmodule:req.body.idmodule,duree:req.body.duree,prix:req.body.prix  ,numDordre:req.body.numDordre,Session:req.body.Session,membres:req.body.membres});
+        const newutilisateur = await sessionFormation.create({formation:req.body.formation,categorie:req.body.categorie,module:req.body.module,idmodule:req.body.idmodule,duree:req.body.duree,prix:req.body.prix  ,numDordre:req.body.numDordre,Session:req.body.Session,membres:req.body.membres});
            
         res.status(201).json({
             newutilisateur
@@ -17,9 +17,9 @@ exports.Register = async (req, res) => {
 };
 exports.updateSession = async (req, res) => {
     try { 
-        const {formation,duree, prix,numDordre,idmodule,module,Session,membres} = req.body;
+        const {formation,duree, prix,numDordre,idmodule,module,categorie,Session,membres} = req.body;
 
-        const moduless = await sessionFormation.findByIdAndUpdate(req.params.id, {formation,module,duree,prix ,idmodule,numDordre,Session,membres}, { new: true });
+        const moduless = await sessionFormation.findByIdAndUpdate(req.params.id, {formation,categorie,module,duree,prix ,idmodule,numDordre,Session,membres}, { new: true });
  
         res.status(200).json({
             moduless

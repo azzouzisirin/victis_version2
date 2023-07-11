@@ -14,13 +14,15 @@ const categoriesRoutes = require('./routes/categoriesRoutes');
 const formationRoutes = require('./routes/formationRoutes');
 const moduleRoutes = require('./routes/moduleRoutes');
 const detailFormationRoutes = require('./routes/DetailFormationRoutes');
-const SessionFormation = require('./routes/SessionFormationRoutes');
+const sessionFormation = require('./routes/SessionFormationRoutes');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-
+app.get('/',(req,res)=>{
+    res.send('hello world')
+})
 
 const port = process.env.PORT || 4000;
 
@@ -41,8 +43,9 @@ app.use('/utilisateur', utilisateurRoutes);
 app.use('/categorie', categoriesRoutes);
 app.use('/formation', formationRoutes);
 app.use('/module', moduleRoutes);
+app.use('/sessionFormation', sessionFormation);
+
 app.use('/detailFormation', detailFormationRoutes);
-app.use('/sessionFormation', SessionFormation);
 
 
 
@@ -60,4 +63,3 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}.`);
     const os = require('os');
 });
-

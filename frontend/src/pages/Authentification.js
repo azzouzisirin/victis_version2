@@ -91,7 +91,7 @@ export default function Authentification() {
             type="text"
             placeholder="Password"
             name="password"
-			value={password}
+			value={password.password}
             onChange={e => {setpassword(e.target.value)} }
           />
         <br/>		<br/><br/>

@@ -18,6 +18,8 @@ export default function CompSession() {
 
     const [duree, setduree] = useState();
     const [prix, setprix] = useState();
+    const [nomCateg, setnomCateg] = useState();
+
     const [idforma, setidforma] = useState();
 
     const [formation, setformation] = useState(); 
@@ -52,10 +54,10 @@ export default function CompSession() {
      fetchData();
    }
   },[formation])
-  useEffect(()=>{
-    if(module){
+  useEffect(()=>{ 
+    if(module&&formation&&nomCateg){
      const fetchData = async () => { 
-       const res = await axios.get(`${BASE_URL}/module/getModule/${formation}/${module}`);
+       const res = await axios.get(`${BASE_URL}/module/getModule/${nomCateg}/${formation}/${module}`);
        setprix(res.data.prix);
        setduree(res.data.duree);
 
@@ -63,14 +65,8 @@ export default function CompSession() {
      };
       fetchData();
     }
-   },[module])
+   },[module,formation,nomCateg])
 
-   const addOrEditModule = ( resetForm) => {
-
-    resetForm()
-    setRecordForEditModule(null)
-    setopenPopupModule(false)
-  }
 
 
     const updateItemList=({item,index})=>{
@@ -157,7 +153,7 @@ return(
 idforma={idforma}
                 openPopupModule={openPopupModule}
                 setopenPopupModule={setopenPopupModule}
-                addOrEditModule={addOrEditModule} />
+                 />
 </div>
 )
 }

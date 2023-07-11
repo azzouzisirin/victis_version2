@@ -24,13 +24,12 @@ export default function DescriptFormation() {
 
 	const [prix, setprix] = useState([]);
 
-    const { id  } = useParams();
-	localStorage.setItem("IdFormation",id)
-const nomCateg=localStorage.getItem("nomCateg")
+    const { nomFormation ,nomCateg } = useParams();
+
 	useEffect(() => {
    
 		const fetchData = async () => {
-		  const res = await axios.get(`${BASE_URL}/formation/getFormationById/`+id);
+		  const res = await axios.get(`${BASE_URL}/formation/getFormationByName/`+nomFormation);
 		  setnom(res.data.Formation.nom);
 		  settext_1(res.data.Formation.text_1)
 		  setlist(res.data.Formation.list)
@@ -42,7 +41,6 @@ const nomCateg=localStorage.getItem("nomCateg")
 		  settext_2(res.data.Formation.text_2)
 		  setModules(res.data.allModule)
 		  setTypeModel(res.data.Formation.typeModelFormation)
-         localStorage.setItem("photo",res.data.Formation.photo)
 
 		};
 		 fetchData();
@@ -183,7 +181,7 @@ return(
 					</button>
 							</div>
 		</div> 
-	</div>
+	</div> 
 </div>
 	</div>
 	<div className="">
@@ -195,11 +193,11 @@ return(
 		   {Modules.map((p)  => (
 			    
 				    <div className="boxModul"> 
-					<a href={"/DescriptModule/"+p._id}> <h2>  {p.TitreModule} </h2></a>
+					<a href={"/DescriptModule/"+nomCateg+"/"+nomFormation+"/"+p.nom}> <h2>  {p.TitreModule} </h2></a>
  </div>
 				 
 						))}
-	     
+	      
       
         
            </div>
@@ -235,7 +233,7 @@ return(
 		   {Modules.map((p)  => (
 			   
 				    <div className="boxModul"> 
-					<a href={"/DescriptModule/"+p._id}> <h2> {p.TitreModule} </h2></a>
+					<a href={"/DescriptModule/"+nomCateg+"/"+nomFormation+"/"+p.nom}> <h2> {p.TitreModule} </h2></a>
  </div>
 				 
 						))}
