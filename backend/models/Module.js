@@ -47,7 +47,9 @@ var ModuleSchema = new mongoose.Schema({
         type: String,
 
     },
-
+    photo : { 
+        type: String,
+    },
     numOrdre : { 
         type: Number,
     }

@@ -186,6 +186,11 @@ return (
 								<p className="mt-4 text-p14">
                                 Entrez votre e-mail pour vous inscrire à notre newsletter et rester à jour sur les fonctionnalités et les versions.
 				</p>
+				<p className="mb-4 text-o14 tracking-07 text-grey-3 uppercase">
+				Règlementaire
+				</p>
+				<img  style={{width:"150px",height:"100px",marginLeft:"27%"}} src='../../../img/logo/qualiopi-logo.png'/>
+
 			</div>
 		</div>
 	

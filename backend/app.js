@@ -20,9 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-app.get('/',(req,res)=>{
-    res.send('hello world')
-})
+
 
 const port = process.env.PORT || 4000;
 
@@ -59,7 +57,10 @@ mongoose.connect(process.env.MONGODB_URL, () => {
 });
 mongoose.set('strictQuery', false)
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}.`);
-    const os = require('os');
+app.get('/', (req, res) => {
+    res.send("Backend est bien travailler")
+});
+
+app.listen(port, ()=>{
+    console.log(`Listening port on ${port}`)
 });

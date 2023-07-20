@@ -35,7 +35,7 @@ export default function DescriptModule() {
 		  setprix(res.data.allmodule.prix) 
           setprogramme(res.data.allmodule.programme)
 		  setprogrammeModel2(res.data.allmodule.progModel)
-		  setphoto(res.data.categorie.photo)
+		  setphoto(res.data.allmodule.photo)
 
 
 		};
@@ -84,7 +84,7 @@ return(
                     Formations {nomCateg}
 
 		</a>
-					<a href={"/DescriptFormation/"+nomFormation} className="cursor-pointer  inline-flex items-center text-p14 md:text-p16 -mr-1 first:mr-0 font-semibold -md:hidden" target="_self">
+					<a href={"/DescriptFormation/"+nomCateg+"/"+nomFormation} className="cursor-pointer  inline-flex items-center text-p14 md:text-p16 -mr-1 first:mr-0 font-semibold -md:hidden" target="_self">
 							<svg className="pointer-events-none mx-2 h-full w-4 transform -rotate-90 text-dark" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 					<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="1" strokeMiterlimit="10" strokeLinecap="square"></path>
 				</svg>
@@ -103,11 +103,7 @@ return(
 						<div className="-lg:hidden w-1/2 flex select-none" x-data="{selectedPhoto: &#39;0&#39;}">
 			
 				<div className="relative bg-grey-1 w-496p h-496p overflow-hidden">
-					<div className="rounded-full bg-light absolute z-20 top-4 right-4 h-8 w-8 p-2 pointer-events-none hover:hidden">
-						<svg className="fill-none stroke-current text-dark w-full h-full">
-							<use  href="#icon-search"></use>
-						</svg>
-					</div>
+				
 											<a data-fancybox="gallery" href="" className="product-image-zoom block w-full h-full"   style={{position: "relative", overflow: "hidden"}}>
 							<img src={photo} alt={photo} className="p-5 lozad w-full h-full object-contain bg-grey-1" data-loaded="true"/>
 						<img role="presentation" src={photo} alt={photo} className="zoomImg" style={{position: "absolute", top: "-118.452px", left: "-185.005px", opacity: "0", width: "768px", height: "768px", border: "none",maxWidth: "none", maxHeight: "none"}}/></a>

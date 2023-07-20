@@ -61,13 +61,44 @@ const [numOrdre,setnumOrdre]=useState();
     const [TextProg, setTextProg] = useState();
     const [indxModl2, setindxModl2] = useState(0);
     const [UpdliProg, setUpdliProg] = useState(0);
-
+    const [photo, setphoto] = useState();
+    const [picLoading, setprofilePictureLoading] = useState(false);
+    const [profilePicture, setprofilePicture] = useState();
     const [new_data, setNew_data] = useState({
       titre: "",
       list: []
   
     }); 
+    const postDetails = (pics) => {
+      setprofilePictureLoading(true);
+      if (pics === undefined) {
+       
+        return;
+      }
+      if (pics.type === "image/jpeg"|| pics.type === "image/jpg" || pics.type === "image/png") {
+        const dataa = new FormData();
+        dataa.append("file", pics);
+        dataa.append("upload_preset", "chat-app");
+        dataa.append("cloud_username", "piyushproj");
+        fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
+          method: "post",
+          body: dataa,
+        })
+          .then((res) => res.json())
+          .then((dataa) => {
+            console.log(dataa.url.toString());
+          setphoto(dataa.url.toString());
 
+          })
+  
+          .catch((err) => {
+            console.log(err);
+          });
+      } else {
+      
+        return;
+      }
+    };
     const [persos, setPersos] = useState([
    
     ]);
@@ -177,9 +208,9 @@ const [numOrdre,setnumOrdre]=useState();
       setNew_dataTout({ ...new_dataTout, grandtitre: "" })
       };
       useEffect(() => {
-  
+        if(idforma){
         const fetchData = async () => { 
-          if(idforma){
+    
 
           
           const res = await axios.get(`${BASE_URL}/module/getModuleById/`+idforma);
@@ -250,6 +281,7 @@ const [numOrdre,setnumOrdre]=useState();
               nomFormation:formation,
               text_1:listText_1,
               nom:nomModule,
+              photo:photo,
               progModel:GrandProg,
               programme:persos,
               duree:duree,
@@ -288,6 +320,8 @@ const [numOrdre,setnumOrdre]=useState();
               programme:persos,
               progModel:GrandProg,
               duree:duree,
+              photo:photo,
+
               prix:prix,
               typeModule:typeModule,
               numOrdre:numOrdre,
@@ -403,6 +437,8 @@ const [numOrdre,setnumOrdre]=useState();
               <option value={option.nom}>{option.nom}</option>
             ))}
             </select> 
+            <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Image </label>
+          <input type="file" accept="image/*" onChange={(e) => postDetails(e.target.files[0])} value={profilePicture}/>
             <label style={{marginLeft:"10px",fontWeight:'600',fontSize:"20px"}}> Type Module </label>
 
             <select  style={{width:"150px",height:"45px",marginLeft:"20px"}} 

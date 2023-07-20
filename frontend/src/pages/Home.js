@@ -67,12 +67,12 @@ export default function Home() {
 	<div className="w-270p mx-auto last:mr-0" >  
 
 <figure className="w-full h-270p relative group cursor-pointer bg-grey-1">
-	<a className="block w-full h-full" href={"/DescriptFormation/"+DataFormation[0]._id} target="_self">
+	<a className="block w-full h-full" href={"/DescriptFormation/"+categorie+"/"+DataFormation[0].nom} target="_self">
 		<img decoding="async" className="lozad w-full h-full object-contain p-4" src={DataFormation[0].photo} alt={DataFormation[0].photo}/>
 	</a>
 	
 </figure>
-<a className="block" href={"/DescriptFormation/"+DataFormation[0]._id} target="_self">
+<a className="block" href={"/DescriptFormation/"+categorie+"/"+DataFormation[0].nom} target="_self">
 	<p className="mt-5 text-o14 font-semibold tracking-07 text-grey-2 uppercase">Formation</p>
 	<p className="mt-2 text-p18">{DataFormation[0].nom}</p>
 
@@ -81,14 +81,14 @@ export default function Home() {
 <div className="w-270p mx-auto last:mr-0" >  
 
 			<figure className="w-full h-270p relative group cursor-pointer bg-grey-1">
-				<a className="block w-full h-full" href={"/DescriptFormation/"+DataFormation[1]._id} target="_self">
+				<a className="block w-full h-full" href={"/DescriptFormation/"+categorie+"/"+DataFormation[1].nom} target="_self">
 					<img decoding="async" className="lozad w-full h-full object-contain p-4" src={DataFormation[1].photo} alt={DataFormation[1].photo}/>
 				</a>
 				<div className="px-4 w-full absolute z-20 inset-x-0 bottom-4 ">
 					<button className="quickview-toggle hidden group-hover:block w-full py-4 bg-dark link-button18 tracking-16 font-semibold uppercase text-center hover:shadow-hover active:shadow-wider" data-product="5772">Aperçu rapide</button>
 				</div>
 			</figure>
-			<a className="block" href={"/DescriptFormation/"+DataFormation[1]._id} target="_self">
+			<a className="block" href={"/DescriptFormation/"+categorie+"/"+DataFormation[1].nom} target="_self">
 				<p className="mt-5 text-o14 font-semibold tracking-07 text-grey-2 uppercase">Formation</p>
 				<p className="mt-2 text-p18">{DataFormation[1].nom}</p>
 			
@@ -97,14 +97,14 @@ export default function Home() {
 			<div className="w-270p mx-auto last:mr-0" >  
 
 <figure className="w-full h-270p relative group cursor-pointer bg-grey-1">
-	<a className="block w-full h-full" href={"/DescriptFormation/"+DataFormation[2]._id} target="_self">
+	<a className="block w-full h-full" href={"/DescriptFormation/"+categorie+"/"+DataFormation[2].nom} target="_self">
 		<img decoding="async" className="lozad w-full h-full object-contain p-4" src={DataFormation[2].photo} alt={DataFormation[2].photo}/>
 	</a>
 	<div className="px-4 w-full absolute z-20 inset-x-0 bottom-4 ">
 		<button className="quickview-toggle hidden group-hover:block w-full py-4 bg-dark link-button18 tracking-16 font-semibold uppercase text-center hover:shadow-hover active:shadow-wider" data-product="5772">Aperçu rapide</button>
 	</div>
 </figure>
-<a className="block" href={"/DescriptFormation/"+DataFormation[2]._id} target="_self">
+<a className="block" href={"/DescriptFormation/"+categorie+"/"+DataFormation[2].nom} target="_self">
 	<p className="mt-5 text-o14 font-semibold tracking-07 text-grey-2 uppercase">Formation</p>
 	<p className="mt-2 text-p18">{DataFormation[2].nom}</p>
 
@@ -152,12 +152,11 @@ export default function Home() {
 
 return ( 
 
-<div className="body home page-template-default page page-id-83 wp-embed-responsive theme-pyxl-scry woocommerce-no-js" data-template="base.twig">
+<div>
 	 
 		<NavBar/>
 
 		
-<h1 className="screen-reader-text" href=""> </h1>
 		
 		<main role="main">
 				<div className="content-wrapper">
@@ -174,16 +173,16 @@ return (
                 <video className="hidden md:block object-cover h-full w-full" src="./img/VICTIS-Hero_video_compressed.mp4" autoPlay muted loop></video>		
 					</div>
 		<div className="hero__content -md:pt-56 relative max-w-grid mx-auto flex flex-col justify-end md:justify-center z-20 h-full ml-0 md:ml-auto text-light">
-			<div className="hero__content-inner lg:w-2/3 px-4 pb-4 xl:pl-0 md:pr-20">
+			<div className="hero__content-inner lg:w-2/3 px-2 pb-4 xl:pl-0 md:pr-30">
 													<p className="mb-3 md:mb-5 text-o14 md:text-o18 uppercase font-semibold text-grey-2">BIENVENUE CHEZ VICTIS</p>
 				
-													<h1 className="md:-ml-2p hero__heading font-semibold text-h1Sm md:text-hero">Des solutions conçues par des experts pour vous</h1>
+													<h1 className="md:-ml-1p hero__heading font-semibold text-h1Sm md:text-hero" >Des solutions conçues par des experts spécialement pour vous</h1>
 					<p className="hero__description text-p18 md:text-sub text-left mt-5">Innovation leader de l'industrie dirigée par des ingénieurs experts. Nous sommes VICTIS.</p>
 				
 
 								
 								<div className="flex">
-											<a className="button-primary flex justify-center items-center px-2 md:px-5 text-button14 tracking-14 md:text-button18 md:tracking-18 mt-9" href="" target="">
+											<a className="button-primary flex justify-center items-center px-2 md:px-5 text-button14 tracking-14 md:text-button18 md:tracking-18 mt-9" href="/calendrier-formations" target="">
 											Notre calendrier des formations
 						</a>
 														</div>
@@ -230,12 +229,7 @@ return (
 							<p className="mt-3 md:mt-4 text-p16 md:text-p18 text-grey-2">Les organisations à vocation technique et d'ingénierie ont autant besoin d'excellents ingénieurs que d'excellents gestionnaires et opérateurs. Les techniques d'ingénierie continuent d'évoluer à un rythme important, il est donc impératif que les ingénieurs en exercice doivent être en mesure de mettre à jour continuellement leurs compétences pour maintenir leur organisation à la pointe des meilleures pratiques. </p>
 
 										
-																				<a href="/PromoVictis" className="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 mt-6 md:mt-8 text-link16 md:text-link21" target="">Apprendre encore plus
-	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
-		<path className="stroke-current" d="M2 12.5h20"  strokeWidth="2" strokeMiterlimit="10"></path>
-		<path className="stroke-current"  d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"></path>
-	</svg>
-</a>
+	
 									</div>
 	</div>
 </section>
@@ -619,7 +613,7 @@ return (
 			<p className="mt-6 text-o14 tracking-07 md:text-o18 md:tracking-09 font-semibold uppercase text-grey-2">SERVICES D'INGÉNIERIE</p>
 			<h3 className="mt-2 text-h3Sm md:text-h1Sm font-semibold">Services d'ingénierie et de conception à la demande</h3>
 							<p className="mt-3 md:mt-4 text-p16 md:text-p18 text-grey-2">De la conception et de l'analyse aux services de conseil d'experts, VICTIS offre un support de leadership en ingénierie à la demande et sur site.</p>
-																							<a href="" className="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 mt-6 md:mt-8 text-link16 md:text-link21" target="">Apprendre encore plus
+																							<a href="/service" className="button-link inline-flex items-center font-semibold text-blue-4 hover:text-blue-2 mt-6 md:mt-8 text-link16 md:text-link21" target="">Apprendre encore plus
 	<svg className="ml-2 h-6 w-6 stroke-current " fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25">
 		<path className="stroke-current" d="M2 12.5h20" strokeWidth="2" strokeMiterlimit="10"/>
 		<path className="stroke-current" d="M15 5.5l7 7-7 7" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="square"/>

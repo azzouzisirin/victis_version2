@@ -189,11 +189,11 @@ return(
 		
             {isShown==1?	
             <div className="opacity-0 h-0  o:opacity-100 o:h-auto divVisible"    >
-                <div className="containerboxModel1" >
+                <div className="containerboxModel1"  >
 		   {Modules.map((p)  => (
 			    
-				    <div className="boxModul"> 
-					<a href={"/DescriptModule/"+nomCateg+"/"+nomFormation+"/"+p.nom}> <h2>  {p.TitreModule} </h2></a>
+				    <div className="boxModul" > 
+					<a href={"/DescriptModule/"+nomCateg+"/"+nomFormation+"/"+p.nom}> <h2 style={{fontFamily:"Arial, Helvetica Neue, Helvetica, sans-serif",fontSize:"20px"}}>  {p.TitreModule} </h2></a>
  </div>
 				 
 						))}
@@ -206,7 +206,7 @@ return(
 		
 		{isShown==2?	<div style={{width:"70%",paddingTop:"20px"}} className="divVisible">
 							<p>Certifopac atteste que nos prestations ont été évaluées et jugées conformes aux exigences du Référentiel national qualité au titre de la catégorie 'Actions de formation' (L.6313-1).</p>
-				<img src='../img/logo/qualiopi-logo.png'/> 
+				<img src='../../img/logo/qualiopi-logo.png'/> 
 				<p>Ce label Qualiopi nous permet d’être référencé par les financeurs de la formation professionnelle continue.</p>
 			</div>:null}
 
@@ -215,7 +215,7 @@ return(
 									<div className="md:flex flex-wrap md:pt-2 flex-row-reverse justify-end">
 									<div className="-md:first:mt-6 mt-8 w-full md:w-1/2">
 												{pays.map( (p) => (
-     <a className="mt-3 text-link16 md:text-link18 font-semibold text-blue ease-200 hover:text-blue-2 flex" href={"/descritionFormation/"+nom+"/"+p} >{nom} à {p} </a>
+     <a className="mt-3 text-link16 md:text-link18 font-semibold text-blue ease-200 hover:text-blue-2 flex" href={"/descritionFormation/"+nom+"/"+p} > Formation {nom} à {p}   </a>
     ))}
 
 															</div>
@@ -262,7 +262,7 @@ return(
 			<div style={{textAlign:"center",marginTop:"40px"}} >
 		
 							<p>Certifopac atteste que nos prestations ont été évaluées et jugées conformes aux exigences du Référentiel national qualité au titre de la catégorie 'Actions de formation' (L.6313-1).</p>
-				<img src='../img/logo/qualiopi-logo.png' style={{margin:"auto"}}/> 
+				<img src='../../img/logo/qualiopi-logo.png' style={{margin:"auto"}}/> 
 				<p>Ce label Qualiopi nous permet d’être référencé par les financeurs de la formation professionnelle continue.</p>
 			</div>
 		
@@ -297,7 +297,7 @@ return(
 					<path className="stroke-current" d="M10.666 6.667L8 9.333 5.333 6.667" strokeWidth="1" strokeMiterlimit="10" strokeLinecap="square"></path>
 				</svg>
 		</a>
-					<a href={"/ListFormation/"+nomCateg} className="cursor-pointer  inline-flex items-center text-p14 md:text-p16 -mr-1 first:mr-0 " target="_self">
+					<a href={"/ListFormation/"+nomCateg} className="cursor-pointer  inline-flex items-center text-p14 md:text-p16 -mr-1 first:mr-0 " target="_self" >
                     Formations {nomCateg}
 
 		</a>

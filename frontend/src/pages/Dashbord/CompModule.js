@@ -118,7 +118,7 @@ return(
              <td>
  
                <Link  onClick={() => deleteItemModule(item._id)}>   <Delete /></Link>
-               <Link  onClick={() => { setopenPopupModule(true); setRecordForEditModule(null);setIdforma(item._id)}}>   <Update /></Link>
+               <Link  onClick={() => { setIdforma(item._id);setopenPopupModule(true); setRecordForEditModule(null)}}>   <Update /></Link>
 
 
   </td>

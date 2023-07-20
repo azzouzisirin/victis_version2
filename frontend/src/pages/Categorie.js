@@ -5,7 +5,12 @@ import NavBar from '../components/Navbar';
 import Footer from '../components/Footer';
 function Categorie() {
 	const [data, setData] = useState([]);
-
+	const centerDivStyle = {
+		display: 'flex',
+		justifyContent:'center',
+		alignItems:'center',
+		width:"100%",height:"85px"
+	  };
 	useEffect(() => {
    
 		const fetchData = async () => {
@@ -24,26 +29,37 @@ function Categorie() {
 
 
 
-
+	
 
 	<main >
 		<div className="box-container-categ" >
-			
+		
 		{data.map((item) => ( 
 		<div className="boxforme">
+				<div style={{height:"80%"}}>
+				<a 	href={"/ListFormation/"+item.nom}>
+									<img 
+										style={{width:"400px",height:"100%"}}	src={item.photo} alt={item.photo}/>
+										</a> 
+					</div>
+				
+				 			
+						<div style={centerDivStyle}>
+ 
+ 	<a href={"/ListFormation/"+item.nom} style={{ fontSize:"20px"}}>
+								<h2 style={{fontSize:"22px"}}>	Formations {item.nom} </h2>
+									</a> 
 									
-
-			<a 	href={"/ListFormation/"+item.nom}>
-			<img className="lozad  object-cover   transition-transform transform duration-750 group-hover:scale-105 ease-in-out"
-				style={{width:"400px",height:"250px"}}	src={item.photo} alt={item.photo}/>
-				</a> 
-		<div style={{   alignItems: "center",justifyContent:"center",position:"relative",paddingTop:"auto"}}> 
-			<a href={"/ListFormation/"+item.nom}>
-			<h5 style={{fontSize:"20px"}}>Formations {item.nom}</h5>
-			</a>
+      </div>
+				
 									</div>
-									</div>
-									 ))} 
+								
+									
+									
+									
+									
+									
+									))} 
 								</div>
 							
 						

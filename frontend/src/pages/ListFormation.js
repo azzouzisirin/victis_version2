@@ -8,7 +8,12 @@ import Footer from '../components/Footer';
 function ListFormation() {
 	const [data, setData] = useState([]);
     const { nomCateg  } = useParams();
-
+	const centerDivStyle = {
+		display: 'flex',
+		justifyContent:'center',
+		alignItems:'center',
+		width:"100%",height:"85px"
+	  };
 	useEffect(() => {
    
 		const fetchData = async () => {
@@ -30,16 +35,16 @@ function ListFormation() {
 		<div className="box-container-categ" >
 								{data.map((item) => (
 										<div className="boxforme">
+													<div style={{height:"80%"}}>
 												<a href={"/DescriptFormation/"+nomCateg+"/"+item.nom}>
-												<img className="lozad  object-cover   transition-transform transform duration-750 group-hover:scale-105 ease-in-out"
-	                                         style={{width:"400px",height:"250px"}}
+												<img 
+	                                         style={{width:"400px",height:"100%"}}
 														src={item.photo} alt={item.photo}/></a>
-												<div style={{   alignItems: "center",justifyContent:"center",position:"relative",paddingTop:"auto"}}> 
-
+                              	</div>  <div style={centerDivStyle}>
 										<a href={"/DescriptFormation/"+nomCateg+"/"+item.nom}>
 										
 											
-														<h5 style={{fontSize:"20px"}}>Formations {item.nom}
+														<h5 style={{fontSize:"22px"}}>Formations {item.nom}
 														</h5>
 												
 											
